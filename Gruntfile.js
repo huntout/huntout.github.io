@@ -205,7 +205,11 @@ module.exports = function (grunt) {
     // Usemin adds files to concat
     concat: {},
     // Usemin adds files to uglify
-    uglify: {},
+    uglify: {
+      options: {
+        report: 'min'
+      }
+    },
     // Usemin adds files to cssmin
     cssmin: {
       dist: {
@@ -222,7 +226,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{jpg,jpeg,png}',
+          src: '**/*.{jpg,jpeg}',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -289,7 +293,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           remote: '../',
-          branch: 'build',
+          branch: 'master',
           commit: true,
           push: true
         }

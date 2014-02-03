@@ -3,8 +3,8 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: yo
-description: 
+name: huntout.github.io
+description: 'Huntout me? Yes, Huntout is here.'
 author:
   name: Huntout Zhang
   email: huntout@gmail.com
@@ -18,13 +18,16 @@ include: ['.htaccess']
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
 show_drafts: true
+debug: true
 
 permalink: pretty
-paginate: 25
-paginate_path: 'page:num'
 
 # Markdown library
 markdown: redcarpet
-#   extensions: ['fenced_code_blocks', 'smart']
+  # extensions: ['fenced_code_blocks', 'smart']
 
 pygments: true
+
+encoding: utf-8
+
+source: app
