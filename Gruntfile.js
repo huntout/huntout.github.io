@@ -8,7 +8,7 @@
 //   images: img
 //   fonts: fonts
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
@@ -178,7 +178,10 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= yeoman.dist %>'
       },
-      html: '<%= yeoman.dist %>/index.html'
+      html: [
+        '<%= yeoman.dist %>/index.html',
+        '<%= yeoman.dist %>/archive/index.html'
+      ]
     },
     usemin: {
       options: {
@@ -337,7 +340,7 @@ module.exports = function (grunt) {
   });
 
   // Define Tasks
-  grunt.registerTask('serve', function (target) {
+  grunt.registerTask('serve', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -351,16 +354,16 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function () {
+  grunt.registerTask('server', function() {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve']);
   });
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
+    // 'clean:server',
+    // 'concurrent:test',
+    // 'connect:test'
   ]);
 
   grunt.registerTask('check', [
@@ -386,14 +389,14 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('deploy', [
     'check',
     'test',
     'build',
     'buildcontrol'
-    ]);
+  ]);
 
   grunt.registerTask('default', [
     'check',

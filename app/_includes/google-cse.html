@@ -3,47 +3,9 @@
     <input type="hidden" name="cx" value="017391129284672411347:bmqjgqnrcng" />
     <input type="hidden" name="ie" value="UTF-8" />
     <input type="text" name="q" id="cse-search-field" placeholder="Search Huntout' stuff" />
-    <!--input type="submit" name="sa" value="Search" id="cse-search-button" /-->
   </p>
 </form>
-<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box"></script>
-<script type="text/javascript">
-var search_field = document.getElementById('cse-search-field');
-var clearBackground = function() {
-  search_field.style.background = "none";
-}
-clearBackground();
-search_field.style.padding = "0.5em 1em";
-if (window.agentIsIOS) {
-  search_field.type = 'search';
-} else {
-  search_field.select();
-  search_field.focus();
-}
-if (search_field.addEventListener) {
-    search_field.addEventListener("blur", clearBackground, false);
-} else {
-    search_field.attachEvent("onblur", clearBackground);
-}
-</script>
-<style type="text/css">
-#cse-search-field {
-  width: 70%;
-  font-size: inherit;
-  font-family: helvetica, sans-serif;
-  padding: 0.5em 1em;
-  border: 2px solid #ddd;
-  border-radius: 90px;
-}
-#cse-search-field:focus {
-  outline: none;
-  border-color: #2299ff;
-}
-html.ios #cse-search-field {
-  padding: 0.5em 1em;
-  -webkit-appearance: none;
-}
-html.ios #cse-search-button {
-  display: none;
-}
-</style>
+<script src="http://www.google.com/cse/brand?form=cse-search-box"></script>
+<!-- build:js(app) /js/google-cse.js -->
+<script src="/js/google-cse.js"></script>
+<!-- endbuild -->

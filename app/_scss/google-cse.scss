@@ -1,0 +1,16 @@
+#cse-search-field {
+  width: 70%;
+  font-size: inherit;
+  font-family: helvetica, sans-serif;
+  padding: 0.5em 1em;
+  border: 2px solid #ddd;
+  border-radius: 90px;
+}
+#cse-search-field:focus {
+  outline: none;
+  border-color: #2299ff;
+}
+html.ios #cse-search-field {
+  padding: 0.5em 1em;
+  -webkit-appearance: none;
+}

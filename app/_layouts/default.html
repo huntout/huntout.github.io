@@ -43,10 +43,6 @@
     <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
     {% endif %}
 
-    {% if page.title != "Archive (sidebar)" %}
-    {% include sidebar_ui_controller.html %}
-    {% endif %}
-
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
     <!-- google fonts -->
@@ -56,28 +52,27 @@
     <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/google-cse.css">
     <!-- endbuild -->
 
     <!-- build:js(app) /js/head-scripts.js -->
     <!-- Replace with a custom modernizer build for production -->
     <script src="/_bower_components/modernizr/modernizr.js"></script>
+    <script src="/js/head.js"></script>
     <!-- endbuild -->
+
+    {% if page.title != "Archive (sidebar)" %}
+    <!-- build:js(app) /js/sidebar.js -->
+    <script src="/js/sidebar.js"></script>
+    <!-- endbuild -->
+    {% endif %}
 
   </head>
   <body{% if page.wide_layout %} class="wide"{% endif %}>
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <script>
-      if (window.navigator.userAgent.indexOf('iPad') != -1) {
-        document.documentElement.className = 'ios ipad';
-        window.agentIsIOS = 'ipad';
-      } else if (window.navigator.userAgent.indexOf('iPhone') != -1) {
-        document.documentElement.className = 'ios iphone';
-        window.agentIsIOS = 'iphone';
-      }
-    </script>
 
     <iframe id="sidebar" class="sidebar"></iframe>
 
