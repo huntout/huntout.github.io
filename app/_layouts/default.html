@@ -15,7 +15,10 @@
       {% if page.description %}
       <meta name="description" content="{{ page.description }}">
       <meta name="og:description" content="{{ page.description }}">
-      {% else if content %}
+      {% elsif page.excerpt %}
+      <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines }}">
+      <meta name="og:description" content="{{ page.excerpt | strip_html | strip_newlines }}">
+      {% elsif content %}
       <meta name="description" content="{{ content | strip_html | truncatewords: 25 }}">
       <meta name="og:description" content="{{ content | strip_html | truncatewords: 25 }}">
       {% endif %}
@@ -28,7 +31,7 @@
 
     {% if page.og_image_url %}
     <meta property="og:image" content="{{ page.url }}{{ page.og_image_url }}">
-    {% else if page.photo_url %}
+    {% elsif page.photo_url %}
     <meta property="og:image" content="{{ page.url }}{{ page.photo_url }}">
     {% endif %}
     <meta property="og:url" content="http://huntout.me{{ page.url | remove_first:'index.html' }}">
