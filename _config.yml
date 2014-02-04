@@ -31,3 +31,4 @@ pygments: true
 encoding: utf-8
 
 source: app
+destination: .jekyll
