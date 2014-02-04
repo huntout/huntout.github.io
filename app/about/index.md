@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: "My name is Huntout Zhang. I'm a Chinese senior software engineer living in Beijing with a passion for technology."
 ---
 
 <img src="/img/huntout.png" width="256" height="256" align="right">
