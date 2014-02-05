@@ -121,6 +121,8 @@ comments: yes
   C:\>git clone git@github.com:yourname/yourname.github.io.git
   ```
 
+  > 由于 GitHub Pages 不支持自定义 [plugins](http://jekyllrb.com/docs/plugins/)，我采用了 [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb)。源文件在 `yo` 分支，使用 Grunt 自动编译发布到 `master` 分支。原来的 `master` 分支已经备份到 `master.bak`。(Updated on Feb 05, 2014)
+
 - Bundle
   
   ```

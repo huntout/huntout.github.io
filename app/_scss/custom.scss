@@ -128,11 +128,9 @@ div.content.photo {
 
   div.content blockquote {
     font-family: 'Poly', georgia;
-    font-style:italic;
-    line-height:1.618;
-    background:transparent url(../img/quotation-mark.png) no-repeat scroll 25px 1.4em;
-    padding:0.1em 1em 0.1em 60px;
-    margin:1.618em 0 1.618em -60px;
+    font-style: italic;
+    border-left: 0.5em #eee solid;
+    padding-left: 0.5em;
     color: #666055;
     text-rendering: optimizelegibility;
   }
