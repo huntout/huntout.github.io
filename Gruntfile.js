@@ -23,11 +23,15 @@ module.exports = function(grunt) {
     watch: {
       compass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer:server']
+        tasks: ['compass:server']
+      },
+      copy: {
+        files: ['<%= yeoman.app %>/css/**/*.css'],
+        tasks: ['copy:stageCss']
       },
       autoprefixer: {
-        files: ['<%= yeoman.app %>/css/**/*.css'],
-        tasks: ['copy:stageCss', 'autoprefixer:server']
+        files: ['.tmp/css/**/*.css'],
+        tasks: ['autoprefixer:server']
       },
       jekyll: {
         files: [
@@ -125,7 +129,7 @@ module.exports = function(grunt) {
       },
       server: {
         options: {
-          debugInfo: true,
+          debugInfo: false,
           generatedImagesDir: '.tmp/img/generated'
         }
       }
@@ -325,7 +329,7 @@ module.exports = function(grunt) {
       check: {
         src: [
           '<%= yeoman.app %>/css/**/*.css',
-          '<%= yeoman.app %>/_scss/**/*.scss'
+          '.tmp/css/**/*.css'
         ]
       }
     },
@@ -373,6 +377,7 @@ module.exports = function(grunt) {
     'clean:server',
     'jekyll:check',
     'compass:server',
+    'autoprefixer:server',
     'jshint:all',
     'csslint:check'
   ]);
