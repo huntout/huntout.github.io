@@ -8,6 +8,7 @@ description: 'Huntout me? Yes, Huntout is here.'
 author:
   name: Huntout Zhang
   email: huntout@gmail.com
+baseurl: http://huntout.me
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',

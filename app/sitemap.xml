@@ -4,26 +4,32 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://huntout.me/</loc>
+    <loc>{{ site.baseurl }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema}}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://huntout.me/about/</loc>
+    <loc>{{ site.baseurl }}/about/</loc>
     <lastmod>{{ site.time | date_to_xmlschema}}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://huntout.me/archive/</loc>
+    <loc>{{ site.baseurl }}/archive/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema}}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>{{ site.baseurl }}/tags/</loc>
     <lastmod>{{ site.time | date_to_xmlschema}}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   {% for post in site.posts %}
   <url>
-    <loc>http://huntout.me{{ post.url }}</loc>
+    <loc>{{ post.url | prepend: site.baseurl }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

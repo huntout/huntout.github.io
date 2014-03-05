@@ -3,25 +3,25 @@ layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Huntout Zhang</title>
-  <link href="http://huntout.me/atom.xml" rel="self"/>
-  <link href="http://huntout.me/"/>
+  <title>{{ site.author.name }}</title>
+  <link href="{{ site.baseurl }}/atom.xml" rel="self"/>
+  <link href="{{ site.baseurl }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://huntout.me/</id>
+  <id>{{ site.baseurl }}</id>
   <author>
-    <name>Huntout Zhang</name>
-    <email>huntout@gmail.com</email>
+    <name>{{ site.author.name }}</name>
+    <email>{{ site.author.email }}</email>
   </author>
   {% for post in site.posts limit:10 %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="http://huntout.me{{ post.url }}"/>
+    <link href="{{ post.url | prepend: site.baseurl }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>http://huntout.me{{ post.id }}</id>
+    <id>{{ post.id | prepend: site.baseurl }}</id>
     <content type="html">{{ post.content | xml_escape }}</content>
     <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <name>{{ site.author.name }}</name>
+      <uri>{{ site.baseurl }}/about/</uri>
     </author>
   </entry>
   {% endfor %}

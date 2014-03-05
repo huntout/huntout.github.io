@@ -30,11 +30,11 @@
     <meta name="twitter:site" content="@huntout">
 
     {% if page.og_image_url %}
-    <meta property="og:image" content="{{ page.url }}{{ page.og_image_url }}">
+    <meta property="og:image" content="{{ page.url | prepend: site.baseurl }}{{ page.og_image_url }}">
     {% elsif page.photo_url %}
-    <meta property="og:image" content="{{ page.url }}{{ page.photo_url }}">
+    <meta property="og:image" content="{{ page.url | prepend: site.baseurl }}{{ page.photo_url }}">
     {% endif %}
-    <meta property="og:url" content="http://huntout.me{{ page.url | remove_first:'index.html' }}">
+    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | remove_first:'index.html' }}">
     <meta property="og:site_name" content="huntout.me">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
