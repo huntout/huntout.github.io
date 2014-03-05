@@ -9,9 +9,10 @@ description: "Archive posts sorted by tag"
 {% assign tag_words = site_tags | split:',' | sort %}
 <!-- tag_words: {{ tag_words }} -->
 
+<img src="/img/tags.png" width="80" height="80" align="right" alt="tags">
+
 <div class="tags-page">
 
-  <h1>Tags</h1>
   <ul class="tags-box">
     {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}

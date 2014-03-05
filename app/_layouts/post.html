@@ -8,10 +8,10 @@ layout: default
       {{ page.date | date: "%b %d, %Y" }}
     </info>
     <div class="body">{{ content }}</div>
-    <div class="info">
-      Origin url: <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a><br>
+    <div class="footer">
+      <i class="fa fa-link"></i> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a><br>
       <ul class="tags-box">
-        <li>Tags:</li>
+        <li><i class="fa fa-tags"></i></li>
         {% for tag in page.tags %}
         <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
         {% endfor %}

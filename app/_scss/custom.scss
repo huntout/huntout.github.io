@@ -351,15 +351,18 @@ div.post {
     zoom:0.87;
   }
 
-  div.post .info {
-    margin-top: 2em;
-    color: #777;
-  }
-
 /* --------------------------------------------------------------------------------------------- */
 /* tags */
 
 div.content {
+
+  .post .footer {
+    margin-top: 2em;
+    color: #777;
+    >.fa {
+      margin-right: .8em;
+    }
+  }
 
   .tags-page {
     >*:target {

@@ -269,6 +269,7 @@ module.exports = function(grunt) {
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
             '_bower_components/jquery/jquery.js',
+            '_bower_components/font-awesome/fonts/*',
             'favicon.ico',
             'apple-touch*.png'
           ],
@@ -329,7 +330,8 @@ module.exports = function(grunt) {
       check: {
         src: [
           '<%= yeoman.app %>/css/**/*.css',
-          '.tmp/css/**/*.css'
+          '.tmp/css/**/*.css',
+          '!.tmp/css/font-awesome.css'
         ]
       }
     },
