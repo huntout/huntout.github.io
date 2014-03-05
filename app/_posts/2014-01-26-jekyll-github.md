@@ -4,7 +4,7 @@ description: "本博开篇，按例介绍一下使用 Jekyll 与 GitHub Pages �
 photo_url: "octojekyll-topleft.png"
 photo_title: "Jekyll & GitHub"
 layout: post
-tags: jekyll
+tags: jekyll github
 comments: yes
 ---
 ![]({% postfile octojekyll.png %})

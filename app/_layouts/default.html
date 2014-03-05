@@ -79,7 +79,8 @@
     <header>
       <h1 class="logo" onclick="document.location.href='/';"><a href="/"><img src="/img/signature.png" width="160" height="50" alt="Signature"></a></h1>
       <ul class="navigation">
-        <li><a href="/archive/"{% if page.url contains "/archive/" %}class="active"{% endif %} title="Archived articles">Archive</a></li>
+        <li><a href="/archive/"{% if page.url contains "/archive/" %}class="active"{% endif %} title="Archive posts">Archive</a></li>
+        <li><a href="/tags/"{% if page.url contains "/tags/" %}class="active"{% endif %} title="Archive posts order by tag">Tags</a></li>
         <li><a href="/about/"{% if page.url contains "/about/" %}class="active"{% endif %}>About me</a></li>
       </ul>
     </header>
@@ -105,9 +106,9 @@
         This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0">Creative Commons License</a>
       </p>
       <p>
-        Hosted by <a href="http://pages.github.com/" target="_blank">GitHub Pages</a>
+        Hosted by <a href="http://pages.github.com/" target="_blank">GitHub</a>
         &middot;
-        Forked from <a href="https://github.com/rsms/rsms.github.com" target="_blank">rsms/rsms.github.com</a>
+        Theme from <a href="http://rsms.me" target="_blank">Rasmus</a>
       </p>
     </footer>
     {% endunless %}

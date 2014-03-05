@@ -1,7 +1,7 @@
 ---
 title: "Windows 下建立文件及文件夹的 “Open with Sublime Text 2” 右键菜单"
 layout: post
-tags: sublime text
+tags: [sublime text, Windows]
 comments: yes
 ---
 
