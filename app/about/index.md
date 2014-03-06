@@ -4,7 +4,7 @@ title: About
 description: "My name is Huntout Zhang. I'm a Chinese senior software engineer living in Beijing with a passion for technology."
 ---
 
-<img src="/img/huntout.png" width="196" height="196" align="right">
+<img src="/img/huntout.png" width="256" height="256" align="right">
 
 My name is Huntout Zhang. I'm a Chinese senior software engineer living in Beijing with a passion for technology.
 
@@ -12,11 +12,11 @@ My name is Huntout Zhang. I'm a Chinese senior software engineer living in Beiji
 
 You can find me on a variety of world wild interweb sites where my username is usually "***huntout***".
 
-<p style="font-size: 52px">
-  <a href="http://weibo.com/huntout"             ><i class="fa fa-weibo"          ></i></a>
-  <a href="http://twitter.com/huntout"           ><i class="fa fa-twitter"        ></i></a>
-  <a href="https://github.com/huntout"           ><i class="fa fa-github"         ></i></a>
-  <a href="http://instagram.com/huntout"         ><i class="fa fa-instagram"      ></i></a>
-  <a href="http://www.flickr.com/photos/huntout/"><i class="fa fa-flickr"         ></i></a>
-  <a href="http://www.facebook.com/huntout"      ><i class="fa fa-facebook-square"></i></a>
-</p>
+<div style="font-size: 52px">
+  <a href="http://weibo.com/huntout"             ><i class="fa fa-fw fa-weibo"          ></i></a>
+  <a href="http://twitter.com/huntout"           ><i class="fa fa-fw fa-twitter"        ></i></a>
+  <a href="https://github.com/huntout"           ><i class="fa fa-fw fa-github"         ></i></a>
+  <a href="http://instagram.com/huntout"         ><i class="fa fa-fw fa-instagram"      ></i></a>
+  <a href="http://www.flickr.com/photos/huntout/"><i class="fa fa-fw fa-flickr"         ></i></a>
+  <a href="http://www.facebook.com/huntout"      ><i class="fa fa-fw fa-facebook-square"></i></a>
+</div>
