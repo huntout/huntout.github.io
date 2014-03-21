@@ -23,6 +23,7 @@
     "grunt-contrib-watch": "git://github.com/gruntjs/grunt-contrib-watch.git#b884948805940c663b1cbb91a3c28ba8afdebf78",
     "grunt-filerev": "~0.2.0",
     "grunt-jekyll": "~0.4.1",
+    "grunt-replace": "~0.7.3",
     "grunt-svgmin": "~0.3.0",
     "grunt-usemin": "~2.0.0",
     "jshint-stylish": "~0.1.3",

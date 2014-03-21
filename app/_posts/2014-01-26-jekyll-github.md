@@ -7,7 +7,7 @@ layout: post
 tags: jekyll github
 comments: yes
 ---
-![]({{ site.baseurl }}{% postfile octojekyll.png %})
+![]({{ site.cdnurl }}{% postfile octojekyll.png %})
 
 本博开篇，按例介绍一下使用 [Jekyll](http://jekyllrb.com/) 与 [GitHub Pages](http://pages.github.com/) 构建网站的流程，一为后来者造福，二为自己留个记录。
 

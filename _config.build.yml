@@ -6,3 +6,5 @@
 future: false
 show_drafts: false
 debug: false
+
+cdnurl: http://huntout.qiniudn.com

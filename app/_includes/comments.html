@@ -1,6 +1,6 @@
 {% unless page.no_comments %}
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-image="{{ page.url | prepend: site.baseurl }}{{ page.photo_url }}" data-url="{{ page.url | prepend: site.baseurl }}"></div>
+<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}"{% if page.photo_url %} data-image="{{ page.url | prepend: site.cdnurl }}{{ page.photo_url }}"{% endif %} data-url="{{ page.url | prepend: site.baseurl }}"></div>
 <script type="text/javascript">
 var duoshuoQuery = {
   short_name: "huntout"

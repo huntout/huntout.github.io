@@ -8,11 +8,19 @@
 //   images: img
 //   fonts: fonts
 
+var path = require('path');
+
+RegExp.escape = function(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+};
+
 module.exports = function(grunt) {
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
+
+  var cdnurl = grunt.file.readYAML('_config.build.yml').cdnurl;
 
   grunt.initConfig({
     // Configurable paths
@@ -49,7 +57,7 @@ module.exports = function(grunt) {
           '!<%= yeoman.app %>/_bower_components/**/*',
           '.tmp/css/**/*.css',
           '{.tmp,<%= yeoman.app %>}/js/**/*.js',
-          '<%= yeoman.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
+          '<%= yeoman.app %>/{_postfiles,img}/**/*.{gif,jpg,jpeg,png,svg,webp}'
         ]
       }
     },
@@ -188,6 +196,35 @@ module.exports = function(grunt) {
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css']
     },
+    replace: {
+      dist: {
+        options: {
+          patterns: [{
+            match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.png)', 'g'),
+            replacement: function(s) {
+              var dist = grunt.config.data.yeoman.dist;
+              var cdnurl_ = RegExp.$1;
+              var src = path.join(dist, RegExp.$2);
+              var rev = grunt.filerev.summary[src];
+              if (rev) {
+                rev = path.relative(dist, rev).replace(/\\/g, '/');
+                return cdnurl_ + rev;
+              }
+              return s;
+            }
+          }, {
+            match: /(=)(\/css\/main\..{4}\.css)/g,
+            replacement: '$1' + cdnurl + '$2'
+          }]
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: '**/*.{html,xml}',
+          dest: '<%= yeoman.dist %>'
+        }]
+      }
+    },
     htmlmin: {
       dist: {
         options: {
@@ -287,7 +324,7 @@ module.exports = function(grunt) {
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/{20??,img}/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
@@ -389,7 +426,8 @@ module.exports = function(grunt) {
     'svgmin',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace:dist'
   ]);
 
   grunt.registerTask('deploy', [
