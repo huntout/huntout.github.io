@@ -6,9 +6,7 @@
 
     <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}Huntout Zhang</title>
 
-    {% if page.title != "Archive (sidebar)" %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% endif %}
 
     {% if page.title %}
       <meta property="og:title" content="{{ page.title }}">
@@ -66,20 +64,12 @@
     <script src="/_bower_components/modernizr/modernizr.js"></script>
     <script src="/js/head.js"></script>
     <!-- endbuild -->
-
-    {% if page.title != "Archive (sidebar)" %}
-    <!-- build:js(app) /js/sidebar.js -->
-    <script src="/js/sidebar.js"></script>
-    <!-- endbuild -->
-    {% endif %}
-
   </head>
+
   <body{% if page.wide_layout %} class="wide"{% endif %}>
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <iframe id="sidebar" class="sidebar"></iframe>
 
     <header>
       <h1 class="logo" onclick="document.location.href='/';"><a href="/"><img src="{{ site.cdnurl }}/img/signature.png" width="160" height="50" alt="Signature"></a></h1>
@@ -120,6 +110,5 @@
 
     {% include scripts.html %}
     {% include analytics.html %}
-
   </body>
 </html>
