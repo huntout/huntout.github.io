@@ -11,7 +11,7 @@
     {% endif %}
 
     {% if page.title %}
-    <meta property="og:title" content="{{ page.title }}">
+      <meta property="og:title" content="{{ page.title }}">
       {% if page.description %}
       <meta name="description" content="{{ page.description }}">
       <meta name="og:description" content="{{ page.description }}">
@@ -30,10 +30,11 @@
     <meta name="twitter:site" content="@huntout">
 
     {% if page.og_image_url %}
-    <meta property="og:image" content="{{ page.url | prepend: site.cdnurl }}{{ page.og_image_url }}">
+      <meta property="og:image" content="{{ page.url | prepend: site.cdnurl }}{{ page.og_image_url }}">
     {% elsif page.photo_url %}
-    <meta property="og:image" content="{{ page.url | prepend: site.cdnurl }}{{ page.photo_url }}">
+      <meta property="og:image" content="{{ page.url | prepend: site.cdnurl }}{{ page.photo_url }}">
     {% endif %}
+
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | remove_first:'index.html' }}">
     <meta property="og:site_name" content="{{ site.name }}">
     <meta property="og:type" content="article">
