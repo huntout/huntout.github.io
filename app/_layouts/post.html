@@ -1,23 +1,26 @@
 ---
 layout: default
 ---
-<div class="content{% if page.photo_url %} photo-post{% endif %}">
-  <div class="post single">
-    <h1>{{ page.title }}</h1>
-    <info datetime="{{ page.date | date: '%Y-%m-%d' }}">
-      {{ page.date | date: "%b %d, %Y" }}
-    </info>
-    <div class="body">{{ content }}</div>
-    <div class="footer">
-      <i class="fa fa-link"></i> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a><br>
-      <ul class="tags-box">
-        <li><i class="fa fa-tags"></i></li>
-        {% for tag in page.tags %}
-        <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
-        {% endfor %}
-      </ul>
+<div class="shadow">
+  <div class="content{% if page.photo_url %} photo-post{% endif %}">
+    <div class="post single">
+      <h1>{{ page.title }}</h1>
+      <info datetime="{{ page.date | date: '%Y-%m-%d' }}">
+        {{ page.date | date: "%b %d, %Y" }}
+      </info>
+      <div class="body">{{ content }}</div>
+      <div class="footer">
+        <i class="fa fa-link"></i>  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a>
+        <br>
+        <ul class="tags-box">
+          <li><i class="fa fa-tags"></i></li>
+          {% for tag in page.tags %}
+          <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="breaker"></div>
+      {% include comments.html %}
     </div>
-    <div class="breaker"></div>
-    {% include comments.html %}
   </div>
 </div>

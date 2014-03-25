@@ -2,7 +2,6 @@
 * { margin:0; padding:0; font-family:inherit; }
 
 body {
-  background:#ddd;
   color:#444;
   font:14px 'Poly', georgia, serif;
   line-height:1.5;
@@ -101,6 +100,53 @@ header {
 
 /* --------------------------------------------------------------------------------------------- */
 /* main content */
+
+.shadow {
+
+  position: relative;
+  z-index: 1; /* prevent shadows falling behind containers with backgrounds */
+
+  .content {
+
+    min-height: 500px;
+    position: relative;
+    border: 1px solid #efefef;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+
+    &:before,
+    &:after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      width: 70%;
+      max-width: 200px; /* avoid rotation causing ugly appearance at large container widths */
+      max-height: 100px;
+      height: 55%;
+      -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      -webkit-transform: skew(-15deg) rotate(-6deg);
+      -moz-transform: skew(-15deg) rotate(-6deg);
+      -ms-transform: skew(-15deg) rotate(-6deg);
+      -o-transform: skew(-15deg) rotate(-6deg);
+      transform: skew(-15deg) rotate(-6deg);
+    }
+
+    &:after {
+      left: auto;
+      right: 10px;
+      -webkit-transform: skew(15deg) rotate(6deg);
+      -moz-transform: skew(15deg) rotate(6deg);
+      -ms-transform: skew(15deg) rotate(6deg);
+      -o-transform: skew(15deg) rotate(6deg);
+      transform: skew(15deg) rotate(6deg);
+    }
+  }
+}
 
 div.content {
   background:white;
