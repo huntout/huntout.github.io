@@ -1,8 +1,8 @@
 ---
-title: "Windows 下建立文件及文件夹的 “Open with Sublime Text 2” 右键菜单"
 layout: post
-tags: [sublime text, Windows]
 comments: yes
+tags: [sublime text, Windows]
+title: "Windows 下建立文件及文件夹的 “Open with Sublime Text 2” 右键菜单"
 ---
 
 一般建立 “Open With Sublime Text” 右键菜单的办法是[导入注册表文件](http://superuser.com/questions/412312/can-i-right-click-a-folder-in-windows-7-and-choose-open-with-sublime-text)，但是你可能使用的是 Sublime Text 2 的 Portable 版本，还需要修改 `.reg` 文件中 `sublime_text.exe` 的路径，这里给出**更好的**办法。

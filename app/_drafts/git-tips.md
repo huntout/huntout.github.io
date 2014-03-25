@@ -1,10 +1,8 @@
 ---
-title: "Git Tips"
-description: "我在使用git的过程中的一些心得体会"
-og_image_url: ""
 layout: post
-tags: git
 comments: yes
+tags: git
+title: "Git Tips"
 ---
 
 我在使用git的过程中的一些心得体会。
