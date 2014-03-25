@@ -20,7 +20,7 @@ module.exports = function(grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
-  var cdnurl = grunt.file.readYAML('_config.build.yml').cdnurl;
+  var cdnurl = grunt.file.readYAML('_config.build.yml').cdnurl || '';
 
   grunt.initConfig({
     // Configurable paths
@@ -215,7 +215,13 @@ module.exports = function(grunt) {
               return s;
             }
           }, {
-            match: /(=)(\/css\/main\..{4}\.css)/g,
+            match: /(=)(\/css\/[^\.]+\..{4}\.css)/g,
+            replacement: '$1' + cdnurl + '$2'
+          }, {
+            match: /(=)(\/img\/[^\.]+\..{4}\.png)/g,
+            replacement: '$1' + cdnurl + '$2'
+          }, {
+            match: /(=)(\/js\/[^\.]+\..{4}\.js)/g,
             replacement: '$1' + cdnurl + '$2'
           }]
         },
