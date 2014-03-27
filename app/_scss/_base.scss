@@ -5,7 +5,7 @@
   padding: 0;
 }
 body {
-  font-family: 'Poly', georgia, serif;
+  font-family: $font-serif;
   font-size: $font-size;
   font-weight: lighter;
   line-height: 1.5;
@@ -29,7 +29,7 @@ object {
 pre,
 code,
 tt {
-  font-family: 'Monaco', 'Consolas', monospace;
+  font-family: $font-monospace;
   font-size: 85%;
   font-weight: normal;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -137,7 +137,7 @@ header {
     }
   }
   .navigation {
-    font-family: helvetica, sans-serif;
+    font-family: $font-sans-serif;
     font-size: 85%;
     line-height: $logo-height / 2;
     display: block;
