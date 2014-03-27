@@ -5,7 +5,7 @@
     position: relative;
     min-height: $body-width - $post-padding * 2;
     border: 1px solid #efefef;
-    box-shadow: 0 1px 4px black(.27), 0 0 40px black(.06) inset;
+    @include box-shadow(0 1px 4px black(.27), 0 0 40px black(.06) inset);
     &:before,
     &:after {
       position: absolute;
@@ -17,13 +17,13 @@
       height: 55%;
       max-height: 100px;
       content: '';
-      transform: skew(-15deg) rotate(-6deg);
-      box-shadow: 0 8px 16px black(.3);
+      @include transform(skew(-15deg) rotate(-6deg));
+      @include box-shadow(0 8px 16px black(.3));
     }
     &:after {
       right: 10px;
       left: auto;
-      transform: skew(15deg) rotate(6deg);
+      @include transform(skew(15deg) rotate(6deg));
     }
   }
 }

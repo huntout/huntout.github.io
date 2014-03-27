@@ -124,12 +124,12 @@ header {
     margin: 0;
     a {
       display: inline-block;
-      transition: 160ms -webkit-transform ease-out;
-      transform: translate3d(0, 0, 0);
+      @include transition(160ms -webkit-transform ease-out);
+      @include transform(translate3d(0, 0, 0));
     }
     a:hover {
       cursor: pointer;
-      transform: translate3d(0, 2px, 0);
+      @include transform(translate3d(0, 2px, 0));
     }
     img {
       width: $logo-width;

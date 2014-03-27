@@ -37,7 +37,7 @@
         height: 100%;
         padding: 0;
         background: transparent no-repeat center center scroll;
-        background-size: cover;
+        @include background-size(cover);
         .image {
           position: absolute;
           z-index: 1;
@@ -46,7 +46,7 @@
           bottom: 0;
           left: 0;
           background-color: #ccc;
-          background-size: cover;
+          @include background-size(cover);
         }
       }
       .title {
@@ -59,7 +59,7 @@
         left: 0;
         padding: 10px $padding;
         color: white;
-        text-shadow: 0 0 20px black(.2);
+        @include text-shadow(0 0 20px black(.2));
       }
     }
     &:hover {

@@ -3,8 +3,8 @@
     display: block;
     color: #fff;
     background: #2ae;
-    text-shadow: 0 1px black(.15);
-    box-shadow: inset 0 -2px white(.1), inset 0 -3px black(.1), 0 1px black(.05);
+    @include text-shadow(0 1px black(.15));
+    @include box-shadow(inset 0 -2px white(.1), inset 0 -3px black(.1), 0 1px black(.05));
   }
 }
 .tags-box {
@@ -17,7 +17,7 @@
       text-decoration: none;
       color: #fff;
       background: #2ae;
-      text-shadow: 0 1px black(.15);
+      @include text-shadow(0 1px black(.15));
       sup {
         color: #fff;
       }
@@ -27,7 +27,7 @@
       padding: 0 .6em 3px .6em;
       color: #777;
       background: #f2f2f2;
-      box-shadow: inset 0 -2px white(.1), inset 0 -3px black(.1), 0 1px black(.05);
+      @include box-shadow(inset 0 -2px white(.1), inset 0 -3px black(.1), 0 1px black(.05));
       sup {
         color: #aaa;
       }
