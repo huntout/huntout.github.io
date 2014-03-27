@@ -1,0 +1,194 @@
+/* base */
+* {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poly', georgia, serif;
+  font-size: $font-size;
+  font-weight: lighter;
+  line-height: 1.5;
+  width: $body-width;
+  min-width: $body-min-width;
+  margin: 0 auto;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+p,
+ul,
+ol,
+pre,
+blockquote,
+hr,
+object {
+  margin: 1em 0;
+}
+pre,
+code,
+tt {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 85%;
+  font-weight: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+img {
+  vertical-align: bottom;
+  border: none;
+}
+hr {
+  height: 1px;
+  border: none;
+  background-color: #ddd;
+}
+
+/* headlines */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 1em 0 .618em 0;
+  color: #040404;
+  text-rendering: optimizelegibility;
+}
+h1 {
+  font-size: 180%;
+  margin: 1.618em 0 1em 0;
+}
+h2 {
+  font-size: 175%;
+}
+h3 {
+  font-size: 170%;
+}
+h4 {
+  font-size: 165%;
+}
+h5,
+h6 {
+  font-size: 150%;
+}
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+h1 > a:hover,
+h2 > a:hover,
+h3 > a:hover,
+h4 > a:hover,
+h5 > a:hover,
+h6 > a:hover {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* a */
+a {
+  text-decoration: none;
+  color: $link-color;
+  &:hover {
+    text-decoration: underline;
+  }
+  &.img {
+    border: none;
+    background: transparent !important;
+  }
+}
+
+/* helper classes */
+.breaker {
+  clear: both;
+}
+
+/* header */
+header {
+  $logo-width: 160px * $ratio;
+  $logo-height: 50px * $ratio;
+  $padding-top: 30px * $ratio;
+  $padding-bottom: 20px * $ratio;
+  display: block;
+  color: #ccc;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+  .logo {
+    display: block;
+    float: left;
+    height: $logo-height;
+    margin: 0;
+    a {
+      display: inline-block;
+      transition: 160ms -webkit-transform ease-out;
+      transform: translate3d(0, 0, 0);
+    }
+    a:hover {
+      cursor: pointer;
+      transform: translate3d(0, 2px, 0);
+    }
+    img {
+      width: $logo-width;
+      height: $logo-height;
+    }
+  }
+  .navigation {
+    font-family: helvetica, sans-serif;
+    font-size: 85%;
+    line-height: $logo-height / 2;
+    display: block;
+    float: right;
+    margin: ($logo-height / 2) 0 0 0;
+    text-align: left;
+    li {
+      display: inline-block;
+      margin-left: 1em;
+      list-style: none;
+      &:first-child {
+        margin-left: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #888;
+      }
+      a:hover {
+        text-decoration: none;
+        color: black;
+      }
+      a.active {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+}
+
+/* footer */
+footer {
+  display: block;
+  margin: 5% 0;
+  padding: 0 0 1em 0;
+  text-align: center;
+  color: #999;
+  a:link {
+    color: #777;
+  }
+  img.cc {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -.2em;
+    opacity: .4;
+    border: none;
+  }
+  a.cc:hover {
+    text-decoration: none;
+  }
+  a.cc:hover img.cc {
+    opacity: 1;
+  }
+}

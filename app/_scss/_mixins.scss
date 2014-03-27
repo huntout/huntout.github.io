@@ -1,0 +1,42 @@
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
+@mixin box-shadow($var...) {
+  -webkit-box-shadow: $var;
+     -moz-box-shadow: $var;
+          box-shadow: $var;
+}
+
+@mixin text-shadow($var...) {
+  -webkit-text-shadow: $var;
+     -moz-text-shadow: $var;
+          text-shadow: $var;
+}
+
+@mixin background-size($var...) {
+  -webkit-background-size: $var;
+     -moz-background-size: $var;
+       -o-background-size: $var;
+          background-size: $var;
+}
+
+@mixin transform($var...) {
+  -webkit-transform: $var;
+     -moz-transform: $var;
+      -ms-transform: $var;
+       -o-transform: $var;
+          transform: $var;
+}
+
+@mixin transition($var...) {
+  -webkit-transition: $var;
+     -moz-transition: $var;
+      -ms-transition: $var;
+       -o-transition: $var;
+          transition: $var;
+}

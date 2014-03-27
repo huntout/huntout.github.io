@@ -2,6 +2,7 @@
   "adjoining-classes": false,
   "box-model": false,
   "compatible-vendor-prefixes": false,
+  "fallback-colors": false,
   "font-sizes": false,
   "ids": false,
   "important": false,

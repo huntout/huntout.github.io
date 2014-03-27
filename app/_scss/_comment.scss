@@ -1,0 +1,7 @@
+#ds-thread {
+  width: ($body-width - $post-padding * 2) / $ratio;
+  zoom: $ratio;
+  #ds-reset .ds-account-control {
+    width: 80px;
+  }
+}

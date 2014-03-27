@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-<div class="shadow posts">
-  <div class="content full-bleed" id="recent-posts">
-  {% for post in site.posts limit:25 %}<a
-    href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+<div class="shadow">
+  <div class="content home" id="recent-posts">
+    {% for post in site.posts limit:25 %}
+    <a href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
       <div class="padded-content">
       {% if post.photo_url %}
         <div class="title">{{ post.photo_title }}</div>
@@ -21,9 +21,10 @@ layout: default
         {% endif %}
       {% endif %}
       </div>
-    </a>{% endfor %}
+    </a>
+    {% endfor %}
     <div class="breaker"></div>
-    <div class="end">
+    <div class="more">
       <a href="/archive/">More...</a>
     </div>
   </div>
