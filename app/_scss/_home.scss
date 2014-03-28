@@ -1,8 +1,7 @@
-.home {
-  $padding: 40px * $ratio;
+.content.home {
   padding: 0;
   .more {
-    padding: $padding;
+    padding: 3em;
     text-align: center;
   }
   .post-excerpt {
@@ -18,7 +17,7 @@
     }
     .padded-content {
       display: block;
-      padding: $padding;
+      padding: 2em 3em;
     }
     .title {
       font-weight: bold;
@@ -26,7 +25,7 @@
     info {
       font-style: italic;
       display: inline-block;
-      padding-right: 8px;
+      padding-right: .5em;
       color: #999;
     }
     &.photo {
@@ -57,9 +56,9 @@
         right: 0;
         bottom: 0;
         left: 0;
-        padding: 10px $padding;
+        padding: .5em 1em;
         color: white;
-        @include text-shadow(0 0 20px black(.2));
+        @include text-shadow(0 0 .5em black(.2));
       }
     }
     &:hover {

@@ -1,11 +1,22 @@
-$ratio: 1.3;
-$font-size: 14px * $ratio;
-$body-width: 680px * $ratio;
-$body-min-width: 380px;
-$post-padding: 60px * $ratio;
+// size
+$body-width: 49em;
+$post-padding: 4em;
+
+// headlines
+$h1: 180%;
+$h2: 175%;
+$h3: 170%;
+$h4: 165%;
+$h5: 150%;
+$h6: 150%;
+$smaller: 85%;
+
+// colors
 $bg-color: #fff;
 $text-color: #444;
 $link-color: #4183c4;
+
+// fonts
 $font-serif: 'Poly', georgia, serif;
 $font-sans-serif: helvetica, sans-serif;
 $font-monospace: 'Monaco', 'Consolas', monospace;
