@@ -37,6 +37,10 @@
   }
 }
 @media (max-width:480px) {
+  .right-img {
+    float: none;
+    margin-left: 0;
+  }
   .content {
     padding: $post-padding / 2;
   }
@@ -45,5 +49,11 @@
   }
   #cse-search-field {
     width: 60%;
+  }
+}
+@media (max-width:350px) {
+  .right-img {
+    width: auto !important;
+    height: auto !important;
   }
 }

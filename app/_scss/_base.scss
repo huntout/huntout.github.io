@@ -4,9 +4,6 @@
   margin: 0;
   padding: 0;
 }
-html {
-  min-width: 360px;
-}
 body {
   font-family: $font-serif;
   font-weight: normal;
@@ -108,6 +105,15 @@ a {
 /* helper classes */
 .breaker {
   clear: both;
+}
+.right-img {
+  float: right;
+  margin: 0 0 2em 2em;
+  min-width: 1px;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* header */

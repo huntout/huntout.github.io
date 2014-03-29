@@ -12,21 +12,6 @@
   sup:target a {
     padding: 2px 5px;
   }
-  blockquote {
-    font-family: $font-serif;
-    font-style: italic;
-    padding-left: .5em;
-    color: #665;
-    border-left: .5em #eee solid;
-    text-rendering: optimizelegibility;
-  }
-  code {
-    padding: 0 .3em;
-    color: black;
-    border: 1px solid #d9d9d9;
-    border-radius: 3px;
-    background-color: #f8f8f8;
-  }
   img {
     display: block;
     max-width: 100%;
@@ -43,16 +28,20 @@
   img[align=right] {
     margin: 0 0 1em 1em;
   }
-  li {
-    margin-bottom: .3em;
-    margin-left: 2em;
+  blockquote {
+    font-family: $font-serif;
+    font-style: italic;
+    padding-left: .5em;
+    color: #665;
+    border-left: .5em #eee solid;
+    text-rendering: optimizelegibility;
   }
-  pre > code {
-    padding: 0;
+  code {
+    padding: 0 .3em;
     color: black;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background-color: #f8f8f8;
   }
   pre {
     line-height: 1.5;
@@ -63,6 +52,17 @@
     border: 1px solid #d9d9d9;
     border-radius: 3px;
     background-color: #f8f8f8;
+  }
+  pre > code {
+    padding: 0;
+    color: black;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+  }
+  li {
+    margin-bottom: .3em;
+    margin-left: 2em;
   }
   ul > li {
     margin-left: 1.4em;
