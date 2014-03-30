@@ -42,12 +42,11 @@
     child_nodes = posts.childNodes,
     k,
     node,
-    origin = {},
     col0 = {},
     col1 = {},
     node_count = 0,
     is_col0,
-    row0_y,
+    row0 = {},
     ELEMENT_NODE = Node ? Node.ELEMENT_NODE : 1;
 
   posts.style.position = (window.__post_grid_width <= 680) ? 'static' : 'relative';
@@ -62,21 +61,20 @@
         if (window.__post_grid_width <= 680) {
           node.style.height = null;
         } else {
-          node.style.height = (Math.max(col0.y, col1.y) - row0_y) + 'px';
+          node.style.height = (Math.max(col0.y, col1.y) - row0.y) + 'px';
         }
         break;
       }
       if (col0.y === undefined) {
-        origin.x = node.offsetLeft;
-        origin.y = node.offsetTop;
-        origin.w = node.clientWidth;
-        col0.x = origin.x;
-        col0.y = origin.y + node.clientHeight;
-        row0_y = col0.y;
+        col0.x = 0;
+        col0.y = node.clientHeight - 1;
+        col0.w = node.clientWidth;
+        row0.y = col0.y;
       } else {
         if (col1.y === undefined) {
-          col1.x = origin.x + origin.w;
-          col1.y = origin.y;
+          col1.x = col0.w - 1;
+          col1.y = 0;
+          col1.w = col0.w + 1;
         }
         if (window.__post_grid_width <= 680) {
           // console.log('clear');
@@ -87,12 +85,13 @@
         } else {
           is_col0 = col0.y <= col1.y + 5;
           node.style.position = 'absolute';
-          node.style.width = origin.w + 'px';
           if (is_col0) {
+            // node.style.width = col0.w + 'px';
             node.style.left = col0.x + 'px';
             node.style.top = col0.y + 'px';
             col0.y += node.clientHeight - 1;
           } else {
+            node.style.width = col1.w + 'px';
             node.style.left = col1.x + 'px';
             node.style.top = col1.y + 'px';
             col1.y += node.clientHeight - 1;

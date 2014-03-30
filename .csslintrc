@@ -10,6 +10,5 @@
   "qualified-headings": false,
   "regex-selectors": false,
   "unique-headings": false,
-  "universal-selector": false,
-  "vendor-prefix": false
+  "universal-selector": false
 }
