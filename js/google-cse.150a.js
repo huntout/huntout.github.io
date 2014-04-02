@@ -1,0 +1,1 @@
+!function(){var a=document.getElementById("cse-search-field"),b=function(){a.style.background="none"};b(),a.style.padding="0.5em 1em",window.agentIsIOS?a.type="search":(a.select(),a.focus()),a.addEventListener?a.addEventListener("blur",b,!1):a.attachEvent("onblur",b)}();

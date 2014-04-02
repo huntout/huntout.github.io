@@ -1,0 +1,1 @@
+!function(){-1!==window.navigator.userAgent.indexOf("iPad")?(document.documentElement.className="ios ipad",window.agentIsIOS="ipad"):-1!==window.navigator.userAgent.indexOf("iPhone")&&(document.documentElement.className="ios iphone",window.agentIsIOS="iphone")}();

@@ -1,0 +1,21 @@
+✔✔✔✔✔ 1234567890
+✗✗✗✗✗ 0987654321
+一二三四五 一二三四五 1234567890 1234567890
+1234567890 1234567890 六七八九十 六七八九十
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+`@#^~!$%&*-=+()[]{}_;:'",.<>/?
+
+$ npm list
+├─┬ grunt@0.4.2
+│ ├── exit@0.1.2
+│ ├─┬ findup-sync@0.1.2
+│ │ ├─┬ glob@3.1.21
+│ │ │ ├── graceful-fs@1.2.3
+│ │ │ └─┬ minimatch@0.2.14
+│ │ │   └── sigmund@1.0.0
+│ │ └── lodash@1.0.1
+│ ├── getobject@0.1.0
+│ └─┬ glob@3.1.21
+│   └── inherits@1.0.0
+└── lodash@1.0.1
