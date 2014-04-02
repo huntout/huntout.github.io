@@ -8,4 +8,3 @@ show_drafts: false
 debug: false
 
 cdnurl: http://huntout.qiniudn.com
-#cdnurl: "http://localhost:9000"

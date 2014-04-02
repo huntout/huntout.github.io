@@ -20,8 +20,6 @@ module.exports = function(grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
-  var cdnurl = grunt.file.readYAML('_config.build.yml').cdnurl || '';
-
   grunt.initConfig({
     // Configurable paths
     yeoman: {
@@ -160,11 +158,13 @@ module.exports = function(grunt) {
       options: {
         bundleExec: true,
         config: '_config.yml,_config.build.yml',
-        src: '<%= yeoman.app %>'
+        src: '<%= yeoman.app %>',
+        dest: '<%= yeoman.dist %>'
       },
-      dist: {
+      dist: {},
+      servedist: {
         options: {
-          dest: '<%= yeoman.dist %>',
+          raw: 'cdnurl: ""',
         }
       },
       server: {
@@ -198,41 +198,47 @@ module.exports = function(grunt) {
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css']
     },
-    replace: {
-      dist: {
-        options: {
-          patterns: [{
-            match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.png)', 'g'),
-            replacement: function(s) {
-              var dist = grunt.config.data.yeoman.dist;
-              var cdnurl_ = RegExp.$1;
-              var src = path.join(dist, RegExp.$2);
-              var rev = grunt.filerev.summary[src];
-              if (rev) {
-                rev = path.relative(dist, rev).replace(/\\/g, '/');
-                return cdnurl_ + rev;
+    replace: (function() {
+      function f(cdnurl) {
+        return {
+          options: {
+            patterns: [{
+              match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.png)', 'g'),
+              replacement: function(s) {
+                var dist = grunt.config.data.yeoman.dist;
+                var cdnurl_ = RegExp.$1;
+                var src = path.join(dist, RegExp.$2);
+                var rev = grunt.filerev.summary[src];
+                if (rev) {
+                  rev = path.relative(dist, rev).replace(/\\/g, '/');
+                  return cdnurl_ + rev;
+                }
+                return s;
               }
-              return s;
-            }
-          }, {
-            match: /(=)(\/css\/[^\.]+\..{4}\.css)/g,
-            replacement: '$1' + cdnurl + '$2'
-          }, {
-            match: /(=)(\/img\/[^\.]+\..{4}\.png)/g,
-            replacement: '$1' + cdnurl + '$2'
-          }, {
-            match: /(=)(\/js\/[^\.]+\..{4}\.js)/g,
-            replacement: '$1' + cdnurl + '$2'
+            }, {
+              match: /(=)(\/css\/[^\.]+\..{4}\.css)/g,
+              replacement: '$1' + cdnurl + '$2'
+            }, {
+              match: /(=)(\/img\/[^\.]+\..{4}\.png)/g,
+              replacement: '$1' + cdnurl + '$2'
+            }, {
+              match: /(=)(\/js\/[^\.]+\..{4}\.js)/g,
+              replacement: '$1' + cdnurl + '$2'
+            }]
+          },
+          files: [{
+            expand: true,
+            cwd: '<%= yeoman.dist %>',
+            src: '**/*.{html,xml}',
+            dest: '<%= yeoman.dist %>'
           }]
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.{html,xml}',
-          dest: '<%= yeoman.dist %>'
-        }]
+        };
       }
-    },
+      return {
+        dist: f(grunt.file.readYAML('_config.build.yml').cdnurl || ''),
+        servedist: f('')
+      };
+    })(),
     htmlmin: {
       dist: {
         options: {
@@ -387,7 +393,7 @@ module.exports = function(grunt) {
   // Define Tasks
   grunt.registerTask('serve', function(target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build:servedist', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -420,30 +426,33 @@ module.exports = function(grunt) {
     'csslint:check'
   ]);
 
-  grunt.registerTask('build', [
-    'clean',
-    // Jekyll cleans files from the target directory, so must run first
-    'jekyll:dist',
-    'concurrent:dist',
-    'useminPrepare',
-    'concat',
-    'autoprefixer:dist',
-    'cssmin',
-    'uglify',
-    'imagemin',
-    'svgmin',
-    'filerev',
-    'usemin',
-    'htmlmin',
-    'replace:dist'
-  ]);
+  grunt.registerTask('build', function(target) {
+    target = target || 'dist';
+    grunt.task.run([
+      'clean',
+      // Jekyll cleans files from the target directory, so must run first
+      'jekyll:' + target,
+      'concurrent:dist',
+      'useminPrepare',
+      'concat',
+      'autoprefixer:dist',
+      'cssmin',
+      'uglify',
+      'imagemin',
+      'svgmin',
+      'filerev',
+      'usemin',
+      'htmlmin',
+      'replace:' + target
+    ]);
+  });
 
-  grunt.registerTask('deploy', [
-    'check',
-    'test',
-    'build',
-    'buildcontrol'
-  ]);
+  // grunt.registerTask('deploy', [
+  //   'check',
+  //   'test',
+  //   'build',
+  //   'buildcontrol'
+  // ]);
 
   grunt.registerTask('default', [
     'check',
