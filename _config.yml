@@ -34,3 +34,13 @@ encoding: utf-8
 
 source: app
 destination: .jekyll
+
+sitemap:
+  file: '/sitemap.xml'
+  exclude:
+    - '/404.html'
+    - '/atom.xml'
+  include_posts:
+    - '/index.html'
+  change_frequency_name: 'change_frequency'
+  priority_name: 'priority'
