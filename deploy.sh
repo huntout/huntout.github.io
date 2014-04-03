@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-set -o errexit #abort if any command fails
+
+#abort if any command fails
+set -o errexit
 
 deploy_directory=dist
 deploy_branch=master
@@ -74,10 +76,10 @@ case $diff in
 		git --work-tree "$deploy_directory" commit -m \
 			"publish: $commit_title"$'\n\n'"generated from commit $commit_hash"
 
-		disable_expanded_output
-		#--quiet is important here to avoid outputting the repo URL, which may contain a secret token
-		git push --quiet $repo $deploy_branch
-		enable_expanded_output
+		# disable_expanded_output
+		# #--quiet is important here to avoid outputting the repo URL, which may contain a secret token
+		# git push --quiet $repo $deploy_branch
+		# enable_expanded_output
 		;;
 	*)
 		echo git diff exited with code $diff. Aborting.
