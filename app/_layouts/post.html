@@ -9,17 +9,20 @@ layout: default
         {{ page.date | date: "%b %d, %Y" }}
       </info>
       <div class="body">{{ content }}</div>
-      <div class="footer">
-        <i class="fa fa-link"></i>  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a>
-        <br>
-        <ul class="tags-box">
-          <li><i class="fa fa-tags"></i></li>
-          {% for tag in page.tags %}
-          <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
-          {% endfor %}
-        </ul>
+      <div class="ribbon">
+        <div class="rectangle clearfix">
+          <i class="fa fa-link"></i>  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a>
+          <br>
+          <ul class="tags-box">
+            <li><i class="fa fa-tags"></i></li>
+            {% for tag in page.tags %}
+            <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="triangle-l"></div>
+        <div class="triangle-r"></div>
       </div>
-      <div class="breaker"></div>
       {% include comments.html %}
     </div>
   </div>

@@ -1,10 +1,11 @@
 .post {
   padding-bottom: 0;
   page-break-before: always;
-  .footer {
+  .ribbon {
+    @include ribbon($post-padding);
     margin-top: 2em;
     color: #777;
-    > .fa {
+    .fa-link {
       margin-right: .8em;
     }
   }

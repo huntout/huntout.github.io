@@ -44,6 +44,9 @@
   .content {
     padding: $post-padding / 2;
   }
+  .post .ribbon {
+    @include ribbon($post-padding / 2);
+  }
   .post info {
     margin-left: -$post-padding / 2;
   }

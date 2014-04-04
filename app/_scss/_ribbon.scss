@@ -1,0 +1,44 @@
+@mixin ribbon($padding) {
+  $offset: $padding / 4;
+  $color: #eee;
+  $darken: darken($color, 15%);
+  position: relative;
+  margin-right: $padding;
+  margin-left: -$padding;
+  .rectangle {
+    position: relative;
+    z-index: 100;
+    right: -$offset;
+    left: -$offset;
+    width: 100%;
+    padding: $offset ($padding + $offset) 0;
+    background: $color;
+    @include box-shadow(0 0 4px black(.5));
+    .tags-box > li a {
+      background: $color;
+      &:hover {
+        background: #2ae;
+      }
+    }
+  }
+  .triangle-l,
+  .triangle-r {
+    position: relative;
+    z-index: -1;
+    top: -$offset;
+    right: auto;
+    left: -$offset * 2;
+    float: left;
+    width: 0;
+    height: 0;
+    border-width: $offset;
+    border-style: solid;
+    border-color: transparent $darken transparent transparent;
+  }
+  .triangle-r {
+    right: -($padding + $offset) * 2;
+    left: auto;
+    float: right;
+    border-color: transparent transparent transparent $darken;
+  }
+}
