@@ -13,15 +13,6 @@
   > li {
     float: left;
     margin: 0 .8em .8em 0 !important;
-    a:hover {
-      text-decoration: none;
-      color: #fff;
-      background: #2ae;
-      @include text-shadow(0 1px black(.15));
-      sup {
-        color: #fff;
-      }
-    }
     a {
       display: block;
       padding: 0 .6em 3px .6em;
@@ -30,6 +21,15 @@
       @include box-shadow(inset 0 -2px white(.1), inset 0 -3px black(.1), 0 1px black(.05));
       sup {
         color: #aaa;
+      }
+    }
+    a:hover {
+      text-decoration: none;
+      color: #fff;
+      background: #2ae;
+      @include text-shadow(0 1px black(.15));
+      sup {
+        color: #fff;
       }
     }
   }
