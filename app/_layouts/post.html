@@ -10,15 +10,28 @@ layout: default
       </info>
       <div class="body">{{ content }}</div>
       <div class="ribbon">
-        <div class="rectangle clearfix">
-          <i class="fa fa-link"></i>  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a>
-          <br>
-          <ul class="tags-box">
-            <li><i class="fa fa-tags"></i></li>
-            {% for tag in page.tags %}
-            <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
-            {% endfor %}
-          </ul>
+        <div class="rectangle">
+          {% if page.previous %}
+          <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">
+            <div class="prev"><i class="fa fa-angle-left fa-3x"></i></div>
+          </a>
+          {% endif %}
+          {% if page.next %}
+          <a href="{{ page.next.url }}" title="{{ page.next.title }}">
+            <div class="next"><i class="fa fa-angle-right fa-3x"></i></div>
+          </a>
+          {% endif %}
+          <div class="clearfix">
+            <div class="curr">
+              <i class="fa fa-link"></i> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.url | prepend: site.baseurl }}</a>
+            </div>
+            <ul class="tags-box">
+              <li><i class="fa fa-tags"></i></li>
+              {% for tag in page.tags %}
+              <li><a href="/tags/#{{ tag | cgi_escape }}">{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
         <div class="triangle-l"></div>
         <div class="triangle-r"></div>

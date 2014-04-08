@@ -5,8 +5,13 @@
     @include ribbon($post-padding);
     margin-top: 2em;
     color: #777;
-    .fa-link {
-      margin-right: .8em;
+    .curr {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      .fa {
+        margin-right: .8em;
+      }
     }
   }
   info {
