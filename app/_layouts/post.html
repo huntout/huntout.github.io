@@ -13,12 +13,12 @@ layout: default
         <div class="rectangle">
           {% if page.previous %}
           <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">
-            <div class="prev"><i class="fa fa-angle-left fa-3x"></i></div>
+            <div class="prev"><i class="fa fa-angle-left"></i></div>
           </a>
           {% endif %}
           {% if page.next %}
           <a href="{{ page.next.url }}" title="{{ page.next.title }}">
-            <div class="next"><i class="fa fa-angle-right fa-3x"></i></div>
+            <div class="next"><i class="fa fa-angle-right"></i></div>
           </a>
           {% endif %}
           <div class="curr">
@@ -33,8 +33,6 @@ layout: default
             </ul>
           </div>
         </div>
-        <div class="triangle-l"></div>
-        <div class="triangle-r"></div>
       </div>
       {% include comments.html %}
     </div>

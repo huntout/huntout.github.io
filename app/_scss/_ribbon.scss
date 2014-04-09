@@ -1,9 +1,9 @@
 @mixin ribbon($padding) {
   $offset: $padding / 8;
   $height: 2em;
+  $fa-ratio: 3;
   $color: $bg-color;
   $darken: darken($color, 15%);
-  position: relative;
   margin-right: $padding;
   margin-left: -$padding;
   .rectangle {
@@ -14,7 +14,7 @@
     width: 100%;
     padding: 0 ($padding + $offset);
     background: $color;
-    @include box-shadow(0 1px 4px black(.27), 0 0 40px black(.06) inset);
+    @include paper-shadow;
     @include clearfix;
     .prev,
     .next {
@@ -27,6 +27,7 @@
         background-color: $darken;
       }
       .fa {
+        font-size: 1em * $fa-ratio;
         line-height: $height;
       }
     }
@@ -35,11 +36,12 @@
       margin: 0 (-$padding - $offset) 0 0;
     }
   }
-  .triangle-l,
-  .triangle-r {
+  &:before,
+  &:after {
+    content: '';
     position: relative;
     z-index: -1;
-    top: -$offset;
+    top: $height * $fa-ratio - $offset;
     right: auto;
     left: -$offset * 2;
     float: left;
@@ -49,7 +51,8 @@
     border-style: solid;
     border-color: transparent $darken transparent transparent;
   }
-  .triangle-r {
+  &:after {
+    top: -$offset;
     right: -($padding + $offset) * 2;
     left: auto;
     float: right;

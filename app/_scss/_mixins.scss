@@ -62,3 +62,7 @@
       clear: both;
   }
 }
+
+@mixin paper-shadow {
+  @include box-shadow(0 1px 4px black(.27), 0 0 40px black(.06) inset);
+}
