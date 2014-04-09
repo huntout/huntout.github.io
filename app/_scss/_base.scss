@@ -137,6 +137,7 @@ header {
   color: #ccc;
   padding-top: $padding-top;
   padding-bottom: $padding-bottom;
+  @include clearfix;
   .logo {
     display: block;
     float: left;

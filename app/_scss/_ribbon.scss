@@ -1,5 +1,6 @@
 @mixin ribbon($padding) {
-  $offset: $padding / 10;
+  $offset: $padding / 8;
+  $height: 2em;
   $color: $bg-color;
   $darken: darken($color, 15%);
   position: relative;
@@ -11,13 +12,14 @@
     right: -$offset;
     left: -$offset;
     width: 100%;
-    padding: $offset ($padding + $offset) 0;
+    padding: 0 ($padding + $offset);
     background: $color;
     @include box-shadow(0 1px 4px black(.27), 0 0 40px black(.06) inset);
+    @include clearfix;
     .prev,
     .next {
       float: left;
-      margin: (-$offset) 0 (-$offset) (-$padding - $offset);
+      margin: 0 0 0 (-$padding - $offset);
       padding: 0 ($padding / 2 - $offset * 2);
       color: $darken;
       &:hover {
@@ -25,12 +27,12 @@
         background-color: $darken;
       }
       .fa {
-        line-height: 1.8;
+        line-height: $height;
       }
     }
     .next {
       float: right;
-      margin: (-$offset) (-$padding - $offset) (-$offset) 0;
+      margin: 0 (-$padding - $offset) 0 0;
     }
   }
   .triangle-l,

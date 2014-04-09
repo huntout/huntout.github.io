@@ -5,7 +5,8 @@
     @include ribbon($post-padding);
     margin-top: 2em;
     color: #777;
-    .curr {
+    .link {
+      padding-top: 1em;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;

@@ -9,7 +9,9 @@
 }
 .tags-box {
   line-height: 1.5em;
+  margin-bottom: 0;
   list-style: none;
+  @include clearfix;
   > li {
     float: left;
     margin: 0 .8em .8em 0 !important;
