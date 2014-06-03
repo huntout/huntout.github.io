@@ -37,6 +37,13 @@
   }
 }
 @media (max-width:480px) {
+  body {
+    padding: 0;
+  }
+  header {
+    padding-right: $post-padding / 2;
+    padding-left: $post-padding / 2;
+  }
   .right-img {
     float: none;
     margin-left: 0;
