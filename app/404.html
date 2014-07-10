@@ -4,22 +4,17 @@ permalink: /404.html
 ---
 <!DOCTYPE HTML>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Huntout not found</title>
-  <script>
-  var path = document.location.pathname;
-  window.onload = function() {
-    document.getElementById('cse-search-field').value =
-      path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
-  };
-  </script>
-  <style type="text/css" media="screen">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>huntout.me - 404 Not found</title>
+<style type="text/css">
   body {
-    font-family: sans-serif;
-    margin: 4em 10em;
+    font-family: serif;
+    margin: 4em 6em;
+  }
+  .content {
+    max-width: 40em;
   }
   a {
     color: inherit;
@@ -28,17 +23,24 @@ permalink: /404.html
   a:hover {
     text-decoration: underline;
   }
-  </style>
+  .gsc-clear-button {
+    display: none;
+  }
+</style>
+<script>
+  var path = document.location.pathname;
+  window.onload = function() {
+    document.getElementById('gsc-i-id1').value =
+      path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
+  };
+</script>
 </head>
-
 <body>
-  <div class="content">
-    <h1><a href="/">{{ site.name }}</a>
-    </h1>
-    <h2>404 Not found</h2>
-    <p>Ooops. Looks like you followed a dead link. Try searching this site:</p>
-    {% include google-cse.html %}
-  </div>
+<div class="content">
+  <h1><a href="/">{{ site.name }}</a></h1>
+  <h2>404 Not found</h2>
+  <p>Ooops. Looks like you followed a dead link. Try searching this site:</p>
+  {% include google-cse.html %}
+</div>
 </body>
-
 </html>

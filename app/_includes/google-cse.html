@@ -1,11 +1,13 @@
-<form action="http://www.google.com/cse" id="cse-search-box">
-  <p>
-    <input type="hidden" name="cx" value="017391129284672411347:bmqjgqnrcng" />
-    <input type="hidden" name="ie" value="UTF-8" />
-    <input type="text" name="q" id="cse-search-field" placeholder="Search Huntout' stuff" />
-  </p>
-</form>
-<script src="http://www.google.com/cse/brand?form=cse-search-box"></script>
-<!-- build:js(app) /js/google-cse.js -->
-<script src="/js/google-cse.js"></script>
-<!-- endbuild -->
+<script>
+  (function() {
+    var cx = '017391129284672411347:bmqjgqnrcng';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>

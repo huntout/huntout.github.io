@@ -1,17 +1,16 @@
-#cse-search-field {
-  font-family: $font-sans-serif;
-  font-size: inherit;
-  width: 65%;
-  min-width: 10em;
-  padding: .5em 1em;
-  border: 2px solid #ddd;
-  border-radius: 90px;
-}
-#cse-search-field:focus {
-  border-color: #29f;
-  outline: none;
-}
-html.ios #cse-search-field {
-  padding: .5em 1em;
-  -webkit-appearance: none;
+#___gcse_0 {
+  padding-right: 10em;
+  input.gsc-input {
+    font-family: $font-serif;
+    font-size: 1.4em;
+    padding: .5em 1em;
+    color: #999;
+    border: 2px solid #ddd;
+    border-radius: 90px;
+    background: none !important;
+  }
+  td.gsc-search-button,
+  td.gsc-clear-button {
+    display: none;
+  }
 }
