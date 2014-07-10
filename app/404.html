@@ -7,7 +7,7 @@ permalink: /404.html
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>huntout.me - 404 Not found</title>
+<title>404 Not found - huntout.me</title>
 <style type="text/css">
   body {
     font-family: serif;
@@ -30,8 +30,11 @@ permalink: /404.html
 <script>
   var path = document.location.pathname;
   window.onload = function() {
-    document.getElementById('gsc-i-id1').value =
-      path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
+    var gsci = document.getElementById('gsc-i-id1');
+    gsci.value = path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
+    gsci.style.background = 'none';
+    gsci.type = 'search';
+    gsci.focus();
   };
 </script>
 </head>
