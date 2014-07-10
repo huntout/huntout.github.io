@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html lang=en><head><meta charset=utf-8><meta http-equiv=Content-Type content="text/html; charset=utf-8"><title>huntout.me - 404 Not found</title><style type=text/css>body {
+<!DOCTYPE HTML><html lang=en><head><meta charset=utf-8><meta http-equiv=Content-Type content="text/html; charset=utf-8"><title>404 Not found - huntout.me</title><style type=text/css>body {
     font-family: serif;
     margin: 4em 6em;
   }
@@ -16,8 +16,11 @@
     display: none;
   }</style><script>var path = document.location.pathname;
   window.onload = function() {
-    document.getElementById('gsc-i-id1').value =
-      path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
+    var gsci = document.getElementById('gsc-i-id1');
+    gsci.value = path.replace(/^[\/0-9]+|\.[^\.]+$/g, '').replace(/[_\/-]/g, ' ');
+    gsci.style.background = 'none';
+    gsci.type = 'search';
+    gsci.focus();
   };</script></head><body><div class=content><h1><a href="/">huntout.me</a></h1><h2>404 Not found</h2><p>Ooops. Looks like you followed a dead link. Try searching this site:</p><script>(function() {
     var cx = '017391129284672411347:bmqjgqnrcng';
     var gcse = document.createElement('script');
