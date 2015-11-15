@@ -35,10 +35,10 @@
 &lt;li&gt;&lt;p&gt;单击“开始”按钮，在搜索框中键入 msconfig，然后单击‌ “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“选择性启动”，然后清除“加载启动项”复选框。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.ddfb.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.4147.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;依次单击“服务”、“隐藏所有 Microsoft 服务”，然后单击“全部禁用”。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.0332.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.83ba.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;通过单击「开始」按钮，打开 “Windows Update”。 在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在左窗格中，单击“检查更新”，然后等待 Windows 查找计算机的最新更新。&lt;/p&gt;&lt;/li&gt;
@@ -62,22 +62,22 @@
     <id>http://huntout.me/2014/03/24/beauty-code-font</id>
     <content type="html">&lt;p&gt;在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.e7fe.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.b97a.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
 
 &lt;h1&gt;MacType&lt;/h1&gt;
 
 &lt;p&gt;一款模仿 Mac 的字体渲染风格的软件，先看看效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.3c2c.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.6c03.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载安装 &lt;a href=&quot;&quot;&gt;https://code.google.com/p/mactype/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;配置使用服务模式，最为方便&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.b8c6.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.e867.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;服务已启动&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.0c2e.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.5590.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1&gt;Monaco Font&lt;/h1&gt;
@@ -280,7 +280,7 @@ reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\she
     <link href="http://huntout.me/2014/01/26/jekyll-github/"/>
     <updated>2014-01-26T00:00:00+08:00</updated>
     <id>http://huntout.me/2014/01/26/jekyll-github</id>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/01/26/jekyll-github/octojekyll.f0d8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/01/26/jekyll-github/octojekyll.a396.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;本博开篇，按例介绍一下使用 &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; 与 &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; 构建网站的流程，一为后来者造福，二为自己留个记录。&lt;/p&gt;
 
