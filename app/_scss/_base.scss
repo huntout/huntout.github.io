@@ -20,6 +20,7 @@
        url('../fonts/poly-italic-webfont.ttf') format('truetype'),
        url('../fonts/poly-italic-webfont.svg#polyitalic') format('svg');
 }
+
 /* base */
 * {
   font-family: inherit;
@@ -30,8 +31,6 @@ body {
   font-family: $font-serif;
   font-weight: normal;
   line-height: 1.5;
-  width: $body-width;
-  margin: 0 auto;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -146,6 +145,10 @@ a {
     width: 100%;
     height: auto;
   }
+}
+.body-wrapper {
+  width: $body-width;
+  margin: 0 auto;
 }
 
 /* header */

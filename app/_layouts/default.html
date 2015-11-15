@@ -65,42 +65,46 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
-      <h1 class="logo" onclick="document.location.href='/';"><a href="/"><img src="/img/logo.png" alt="{{ site.name }}"></a></h1>
-      <ul class="navigation">
-        <li><a href="/archive/"{% if page.url contains "/archive/" %}class="active"{% endif %} title="Archive posts">Archive</a></li>
-        <li><a href="/tags/"{% if page.url contains "/tags/" %}class="active"{% endif %} title="Archive posts order by tag">Tags</a></li>
-        <li><a href="/about/"{% if page.url contains "/about/" %}class="active"{% endif %}>About me</a></li>
-      </ul>
-    </header>
+    <div class="body-wrapper">
 
-    {{ content }}
+      <header>
+        <h1 class="logo" onclick="document.location.href='/';"><a href="/"><img src="/img/logo.png" alt="{{ site.name }}"></a></h1>
+        <ul class="navigation">
+          <li><a href="/archive/"{% if page.url contains "/archive/" %}class="active"{% endif %} title="Archive posts">Archive</a></li>
+          <li><a href="/tags/"{% if page.url contains "/tags/" %}class="active"{% endif %} title="Archive posts order by tag">Tags</a></li>
+          <li><a href="/about/"{% if page.url contains "/about/" %}class="active"{% endif %}>About me</a></li>
+        </ul>
+      </header>
 
-    {% if paginator.page %}
-    <div id="paginator" class="content">
-      {% if paginator.next_page %}
-      <a href="/page{{ paginator.next_page }}/">Older entries</a>
+      {{ content }}
+
+      {% if paginator.page %}
+      <div id="paginator" class="content">
+        {% if paginator.next_page %}
+        <a href="/page{{ paginator.next_page }}/">Older entries</a>
+        {% endif %}
+        {% if paginator.previous_page %}
+        <a href="/page{{ paginator.previous_page }}/">Newer entries</a>
+        {% endif %}
+      </div>
       {% endif %}
-      {% if paginator.previous_page %}
-      <a href="/page{{ paginator.previous_page }}/">Newer entries</a>
-      {% endif %}
+
+      {% unless page.no_footer %}
+      <footer>
+        <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by/4.0" class="cc" target="_blank"><img src="/img/cc-cc.png" class="cc">
+          <img src="/img/cc-by.png" class="cc"></a>
+          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0" target="_blank">Creative Commons License</a>
+        </p>
+        <p>
+          Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>
+          &middot;
+          Hosted by <a href="https://github.com/huntout/huntout.github.io" target="_blank">GitHub</a>
+        </p>
+      </footer>
+      {% endunless %}
+
     </div>
-    {% endif %}
-
-    {% unless page.no_footer %}
-    <footer>
-      <p>
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0" class="cc" target="_blank"><img src="/img/cc-cc.png" class="cc">
-        <img src="/img/cc-by.png" class="cc"></a>
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0" target="_blank">Creative Commons License</a>
-      </p>
-      <p>
-        Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>
-        &middot;
-        Hosted by <a href="https://github.com/huntout/huntout.github.io" target="_blank">GitHub</a>
-      </p>
-    </footer>
-    {% endunless %}
 
     {% include scripts.html %}
     {% include analytics.html %}
