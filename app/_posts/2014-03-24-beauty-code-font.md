@@ -3,8 +3,6 @@ layout: post
 comments: yes
 tags: [Windows, sublime text]
 title: "Beauty Code Font on Windows"
-photo_url: "4.png"
-photo_title: "Beauty Code Font on Windows"
 ---
 
 在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。

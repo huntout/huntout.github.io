@@ -15,7 +15,7 @@
 * `grunt build` build
 * `grunt serve:dist` build then start web server on release mode
 * `grunt` check, test, and build
-* `grunt && deploy.sh` deploy
+* `grunt && ./deploy.sh` deploy
 
 ## Thanks
 
