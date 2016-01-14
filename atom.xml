@@ -3,12 +3,82 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2014-06-26T00:00:00+08:00</updated>
+  <updated>2016-01-14T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Extending Android Build Files In Cordova</title>
+    <link href="http://huntout.me/2016/01/14/extending-android-build-files-in-cordova/"/>
+    <updated>2016-01-14T00:00:00+08:00</updated>
+    <id>http://huntout.me/2016/01/14/extending-android-build-files-in-cordova</id>
+    <content type="html">&lt;p&gt;最近流行 &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mobile apps with HTML, CSS &amp;amp; JS&lt;/li&gt;
+&lt;li&gt;Target multiple platforms with one code base&lt;/li&gt;
+&lt;li&gt;Free and open source&lt;/li&gt;
+&lt;li&gt;Support platforms: android, iOS, amazon-fireos, blackberry10, browser, firefoxos, webos, windows, windows8, wp8&lt;/li&gt;
+&lt;li&gt;Reusable code across platforms&lt;/li&gt;
+&lt;li&gt;Support for offline scenarios&lt;/li&gt;
+&lt;li&gt;Access native device APIs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在新的 Android 项目试用了一下，感觉不错。结合 &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt; 及 &lt;a href=&quot;http://vuejs.org/&quot;&gt;Vuejs&lt;/a&gt; 形成了一个可以在 browser 端调试，最后打包成 APK，并且支持单元测试及 E2E 测试的前端脚手架，有时间我会把这个脚手架开源。&lt;/p&gt;
+
+&lt;h3&gt;问题&lt;/h3&gt;
+
+&lt;p&gt;项目中使用了 &lt;code&gt;phonegap-plugin-barcodescanner&lt;/code&gt;，该插件带了十几种本地语言包，&lt;code&gt;cordova build --release&lt;/code&gt; 时会报告 &lt;code&gt;MissingTranslation&lt;/code&gt; 错误。&lt;/p&gt;
+
+&lt;p&gt;最直接的解决方法是在 &lt;code&gt;platforms/android/build.gradle&lt;/code&gt; 中增加&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;android {
+  lintOptions {
+      disable &amp;#39;MissingTranslation&amp;#39;
+      disable &amp;#39;ExtraTranslation&amp;#39;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;问题是 &lt;code&gt;build.gradle&lt;/code&gt; 会在 build 过程中被覆盖，同时 &lt;code&gt;platforms&lt;/code&gt; 目录是被 git ignore 的。&lt;/p&gt;
+
+&lt;h3&gt;解决方案&lt;/h3&gt;
+
+&lt;p&gt;Cordova 提供了 hooks 功能，可以很好的解决这个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hooks/before_build/beforeBuild.js&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/usr/bin/env node&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;fs-extra&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;platforms_extras&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;platforms&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;copySync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Copy platforms extra files.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;platforms_extras/android/build-extras.gradle&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;android {
+  lintOptions {
+      disable &amp;#39;MissingTranslation&amp;#39;
+      disable &amp;#39;ExtraTranslation&amp;#39;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Windows Update 错误 80070020</title>
@@ -35,10 +105,10 @@
 &lt;li&gt;&lt;p&gt;单击“开始”按钮，在搜索框中键入 msconfig，然后单击‌ “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“选择性启动”，然后清除“加载启动项”复选框。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.4147.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.f8a8.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;依次单击“服务”、“隐藏所有 Microsoft 服务”，然后单击“全部禁用”。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.83ba.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.6191.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;通过单击「开始」按钮，打开 “Windows Update”。 在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在左窗格中，单击“检查更新”，然后等待 Windows 查找计算机的最新更新。&lt;/p&gt;&lt;/li&gt;
@@ -62,22 +132,22 @@
     <id>http://huntout.me/2014/03/24/beauty-code-font</id>
     <content type="html">&lt;p&gt;在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.b97a.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.1211.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
 
 &lt;h1&gt;MacType&lt;/h1&gt;
 
 &lt;p&gt;一款模仿 Mac 的字体渲染风格的软件，先看看效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.6c03.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.d3be.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载安装 &lt;a href=&quot;&quot;&gt;https://code.google.com/p/mactype/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;配置使用服务模式，最为方便&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.e867.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.613c.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;服务已启动&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.5590.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1&gt;Monaco Font&lt;/h1&gt;
@@ -280,7 +350,7 @@ reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\she
     <link href="http://huntout.me/2014/01/26/jekyll-github/"/>
     <updated>2014-01-26T00:00:00+08:00</updated>
     <id>http://huntout.me/2014/01/26/jekyll-github</id>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/01/26/jekyll-github/octojekyll.a396.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/01/26/jekyll-github/octojekyll.484f.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;本博开篇，按例介绍一下使用 &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; 与 &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; 构建网站的流程，一为后来者造福，二为自己留个记录。&lt;/p&gt;
 
