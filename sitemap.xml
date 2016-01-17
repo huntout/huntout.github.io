@@ -38,7 +38,13 @@
     </url>
     <url>
         <loc>http://huntout.me/2016/01/14/extending-android-build-files-in-cordova/</loc>
-        <lastmod>2016-01-14T08:57:46+08:00</lastmod>
+        <lastmod>2016-01-17T17:16:07+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://huntout.me/2016/01/17/mocking-module-dependencies-of-webpack/</loc>
+        <lastmod>2016-01-17T19:40:34+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -56,7 +62,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2016-01-14T08:57:46+08:00</lastmod>
+        <lastmod>2016-01-17T19:40:34+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
