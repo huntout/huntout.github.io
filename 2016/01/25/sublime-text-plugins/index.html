@@ -1,0 +1,178 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>My Sublime Text 3 Plugins List &mdash; huntout.me</title><meta name=viewport content="width=device-width, initial-scale=1"><meta property=og:title content="My Sublime Text 3 Plugins List"><meta name=description content="My Sublime Text 3 Plugins List:"><meta name=og:description content="My Sublime Text 3 Plugins List:"><meta name=twitter:card content=summary><meta name=twitter:site content=@huntout><meta property=og:url content="http://huntout.me/2016/01/25/sublime-text-plugins/"><meta property=og:site_name content=huntout.me><meta property=og:type content=article><meta property=og:locale content=zh_CN><meta property=article:published_time content=2016-01-25><!-- Place favicon.ico and apple-touch-icon(s) in the root directory --><!-- rss --><link rel=alternate type=application/atom+xml title=huntout.me href=http://feeds.feedburner.com/huntout><link rel=stylesheet href=http://7d9ouh.com1.z0.glb.clouddn.com/css/main.8cc0.css><script src=http://7d9ouh.com1.z0.glb.clouddn.com/js/head-scripts.d494.js></script></head><body><!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><div class=body-wrapper><header><h1 class=logo onclick="document.location.href='/'"><a href="/"><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/logo.a4f1.png alt=huntout.me></a></h1><ul class=navigation><li><a href="/archive/" title="Archive posts">Archive</a></li><li><a href="/tags/" title="Archive posts order by tag">Tags</a></li><li><a href="/about/">About me</a></li></ul></header><div class=shadow><div class=content><div class="post single"><h1>My Sublime Text 3 Plugins List</h1><info datetime=2016-01-25>Jan 25, 2016</info><div class=body><p id=top>My Sublime Text 3 Plugins List:</p><ul><li><a href=#AutoFileName>AutoFileName</a></li><li><a href=#DocBlockr>DocBlockr</a></li><li><a href=#EditorConfig>EditorConfig</a></li><li><a href=#FileDiffs>FileDiffs</a></li><li><a href=#HTML-CSS-JS-Prettify>HTML-CSS-JS Prettify</a></li><li><a href=#SublimeLinter>SublimeLinter</a></li></ul><p><a href=https://packagecontrol.io/packages/AutoFileName><h2 id=AutoFileName>AutoFileName</h2></a></p><p>Sublime Text plugin that autocompletes filenames</p><p>Whether your making a img tag in html, setting a background image in css, or linking a .js file to your html (or whatever else people use filename paths for these days…), you can now autocomplete the filename.</p><p><img src=http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.gif alt=AutoFileName></p><p><a href=https://packagecontrol.io/packages/DocBlockr><h2 id=DocBlockr>DocBlockr</h2></a></p><p>Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp; C++</p><p><img src=http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.gif alt=DocBlockr></p><p><a href=https://packagecontrol.io/packages/EditorConfig><h2 id=EditorConfig>EditorConfig</h2></a></p><p><a href="http://editorconfig.org/">EditorConfig</a> helps developers maintain consistent coding styles between different editors</p><div class=highlight><pre><code class="ini language-ini" data-lang=ini><span class=c1># .editorconfig</span>
+
+<span class=na>root</span> <span class=o>=</span> <span class=s>true</span>
+
+<span class=k>[*]</span>
+<span class=na>charset</span> <span class=o>=</span> <span class=s>utf-8</span>
+<span class=na>end_of_line</span> <span class=o>=</span> <span class=s>lf</span>
+<span class=na>indent_size</span> <span class=o>=</span> <span class=s>2</span>
+<span class=na>indent_style</span> <span class=o>=</span> <span class=s>space</span>
+<span class=na>insert_final_newline</span> <span class=o>=</span> <span class=s>true</span>
+<span class=na>trim_trailing_whitespace</span> <span class=o>=</span> <span class=s>true</span>
+</code></pre></div><p><a href=https://packagecontrol.io/packages/FileDiffs><h2 id=FileDiffs>FileDiffs</h2></a></p><p>Shows diffs between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes. Can be configured to show diffs in an external diff tool</p><p><img src=http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.gif alt=FileDiffs></p><p><a href=https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify><h2 id=HTML-CSS-JS-Prettify>HTML-CSS-JS Prettify</h2></a></p><p>HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via <a href=https://github.com/einars/js-beautify>js-beautify made by Einar Lielmanis</a>.</p><p><img src=http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.gif alt="HTML-CSS-JS Prettify"></p><div class=highlight><pre><code class="json language-json" data-lang=json>  <span class=err>//</span> <span class=err>.jsbeautifyrc</span>
+
+  <span class=p>{</span>
+    <span class=err>//</span> <span class=err>Details:</span> <span class=err>https://github.com/victorporof/Sublime-HTMLPrettify#using-your-own-jsbeautifyrc-options</span>
+    <span class=err>//</span> <span class=err>Documentation:</span> <span class=err>https://github.com/einars/js-beautify/</span>
+    <span class=nt>&quot;html&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;allowed_file_extensions&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;htm&quot;</span><span class=p>,</span> <span class=s2>&quot;html&quot;</span><span class=p>,</span> <span class=s2>&quot;xhtml&quot;</span><span class=p>,</span> <span class=s2>&quot;shtml&quot;</span><span class=p>,</span> <span class=s2>&quot;xml&quot;</span><span class=p>,</span> <span class=s2>&quot;svg&quot;</span><span class=p>,</span> <span class=s2>&quot;vue&quot;</span><span class=p>],</span>
+      <span class=nt>&quot;brace_style&quot;</span><span class=p>:</span> <span class=s2>&quot;collapse&quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>[collapse|expand|end-expand|none]</span> <span class=err>Put</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>the</span> <span class=err>same</span> <span class=err>line</span> <span class=err>as</span> <span class=err>control</span> <span class=err>statements</span> <span class=err>(default),</span> <span class=err>or</span> <span class=err>put</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>own</span> <span class=err>line</span> <span class=err>(Allman</span> <span class=err>/</span> <span class=err>ANSI</span> <span class=err>style),</span> <span class=err>or</span> <span class=err>just</span> <span class=err>put</span> <span class=err>end</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>own</span> <span class=err>line,</span> <span class=err>or</span> <span class=err>attempt</span> <span class=err>to</span> <span class=err>keep</span> <span class=err>them</span> <span class=err>where</span> <span class=err>they</span> <span class=err>are</span>
+      <span class=nt>&quot;end_with_newline&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>End</span> <span class=err>output</span> <span class=err>with</span> <span class=err>newline</span>
+      <span class=nt>&quot;indent_char&quot;</span><span class=p>:</span> <span class=s2>&quot; &quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>character</span>
+      <span class=nt>&quot;indent_handlebars&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>e.g.</span> <span class=err>,</span> 
+      <span class=nt>&quot;indent_inner_html&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indent</span> <span class=err>&lt;head&gt;</span> <span class=err>and</span> <span class=err>&lt;body&gt;</span> <span class=err>sections</span>
+      <span class=nt>&quot;indent_scripts&quot;</span><span class=p>:</span> <span class=s2>&quot;keep&quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>[keep|separate|normal]</span>
+      <span class=nt>&quot;indent_size&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>size</span>
+      <span class=nt>&quot;max_preserve_newlines&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span> <span class=err>//</span> <span class=err>Maximum</span> <span class=err>number</span> <span class=err>of</span> <span class=err>line</span> <span class=err>breaks</span> <span class=err>to</span> <span class=err>be</span> <span class=err>preserved</span> <span class=err>in</span> <span class=err>one</span> <span class=err>chunk</span> <span class=err>(0</span> <span class=err>disables)</span>
+      <span class=nt>&quot;preserve_newlines&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span> <span class=err>//</span> <span class=err>Whether</span> <span class=err>existing</span> <span class=err>line</span> <span class=err>breaks</span> <span class=err>before</span> <span class=err>elements</span> <span class=err>should</span> <span class=err>be</span> <span class=err>preserved</span> <span class=err>(only</span> <span class=err>works</span> <span class=err>before</span> <span class=err>elements,</span> <span class=err>not</span> <span class=err>inside</span> <span class=err>tags</span> <span class=err>or</span> <span class=err>for</span> <span class=err>text)</span>
+      <span class=nt>&quot;unformatted&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;a&quot;</span><span class=p>,</span> <span class=s2>&quot;span&quot;</span><span class=p>,</span> <span class=s2>&quot;img&quot;</span><span class=p>,</span> <span class=s2>&quot;code&quot;</span><span class=p>,</span> <span class=s2>&quot;pre&quot;</span><span class=p>,</span> <span class=s2>&quot;sub&quot;</span><span class=p>,</span> <span class=s2>&quot;sup&quot;</span><span class=p>,</span> <span class=s2>&quot;em&quot;</span><span class=p>,</span> <span class=s2>&quot;strong&quot;</span><span class=p>,</span> <span class=s2>&quot;b&quot;</span><span class=p>,</span> <span class=s2>&quot;i&quot;</span><span class=p>,</span> <span class=s2>&quot;u&quot;</span><span class=p>,</span> <span class=s2>&quot;strike&quot;</span><span class=p>,</span> <span class=s2>&quot;big&quot;</span><span class=p>,</span> <span class=s2>&quot;small&quot;</span><span class=p>,</span> <span class=s2>&quot;pre&quot;</span><span class=p>,</span> <span class=s2>&quot;h1&quot;</span><span class=p>,</span> <span class=s2>&quot;h2&quot;</span><span class=p>,</span> <span class=s2>&quot;h3&quot;</span><span class=p>,</span> <span class=s2>&quot;h4&quot;</span><span class=p>,</span> <span class=s2>&quot;h5&quot;</span><span class=p>,</span> <span class=s2>&quot;h6&quot;</span><span class=p>],</span> <span class=err>//</span> <span class=err>List</span> <span class=err>of</span> <span class=err>tags</span> <span class=err>that</span> <span class=err>should</span> <span class=err>not</span> <span class=err>be</span> <span class=err>reformatted</span>
+      <span class=nt>&quot;wrap_line_length&quot;</span><span class=p>:</span> <span class=mi>80</span> <span class=err>//</span> <span class=err>Lines</span> <span class=err>should</span> <span class=err>wrap</span> <span class=err>at</span> <span class=err>next</span> <span class=err>opportunity</span> <span class=err>after</span> <span class=err>this</span> <span class=err>number</span> <span class=err>of</span> <span class=err>characters</span> <span class=err>(</span><span class=mi>0</span> <span class=err>disables)</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;css&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;allowed_file_extensions&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;css&quot;</span><span class=p>,</span> <span class=s2>&quot;scss&quot;</span><span class=p>,</span> <span class=s2>&quot;sass&quot;</span><span class=p>,</span> <span class=s2>&quot;less&quot;</span><span class=p>],</span>
+      <span class=nt>&quot;end_with_newline&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>End</span> <span class=err>output</span> <span class=err>with</span> <span class=err>newline</span>
+      <span class=nt>&quot;indent_char&quot;</span><span class=p>:</span> <span class=s2>&quot; &quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>character</span>
+      <span class=nt>&quot;indent_size&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>size</span>
+      <span class=nt>&quot;newline_between_rules&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span> <span class=err>//</span> <span class=err>Add</span> <span class=err>a</span> <span class=err>new</span> <span class=err>line</span> <span class=err>after</span> <span class=err>every</span> <span class=err>css</span> <span class=err>rule</span>
+      <span class=nt>&quot;selector_separator&quot;</span><span class=p>:</span> <span class=s2>&quot; &quot;</span><span class=p>,</span>
+      <span class=nt>&quot;selector_separator_newline&quot;</span><span class=p>:</span> <span class=kc>true</span> <span class=err>//</span> <span class=err>Separate</span> <span class=err>selectors</span> <span class=err>with</span> <span class=err>newline</span> <span class=err>or</span> <span class=err>not</span> <span class=err>(e.g.</span> <span class=err>&#39;a</span><span class=p>,</span><span class=err>\nbr&#39;</span> <span class=err>or</span> <span class=err>&#39;a,</span> <span class=err>br&#39;)</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;js&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;allowed_file_extensions&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;js&quot;</span><span class=p>,</span> <span class=s2>&quot;json&quot;</span><span class=p>,</span> <span class=s2>&quot;jshintrc&quot;</span><span class=p>,</span> <span class=s2>&quot;jsbeautifyrc&quot;</span><span class=p>,</span> <span class=s2>&quot;babelrc&quot;</span><span class=p>,</span> <span class=s2>&quot;eslintrc&quot;</span><span class=p>,</span> <span class=s2>&quot;es6&quot;</span><span class=p>],</span>
+      <span class=nt>&quot;brace_style&quot;</span><span class=p>:</span> <span class=s2>&quot;collapse&quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>[collapse|expand|end-expand|none]</span> <span class=err>Put</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>the</span> <span class=err>same</span> <span class=err>line</span> <span class=err>as</span> <span class=err>control</span> <span class=err>statements</span> <span class=err>(default),</span> <span class=err>or</span> <span class=err>put</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>own</span> <span class=err>line</span> <span class=err>(Allman</span> <span class=err>/</span> <span class=err>ANSI</span> <span class=err>style),</span> <span class=err>or</span> <span class=err>just</span> <span class=err>put</span> <span class=err>end</span> <span class=err>braces</span> <span class=err>on</span> <span class=err>own</span> <span class=err>line,</span> <span class=err>or</span> <span class=err>attempt</span> <span class=err>to</span> <span class=err>keep</span> <span class=err>them</span> <span class=err>where</span> <span class=err>they</span> <span class=err>are</span>
+      <span class=nt>&quot;break_chained_methods&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Break</span> <span class=err>chained</span> <span class=err>method</span> <span class=err>calls</span> <span class=err>across</span> <span class=err>subsequent</span> <span class=err>lines</span>
+      <span class=nt>&quot;e4x&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Pass</span> <span class=err>E4X</span> <span class=err>xml</span> <span class=err>literals</span> <span class=err>through</span> <span class=err>untouched</span>
+      <span class=nt>&quot;end_with_newline&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>End</span> <span class=err>output</span> <span class=err>with</span> <span class=err>newline</span>
+      <span class=nt>&quot;indent_char&quot;</span><span class=p>:</span> <span class=s2>&quot; &quot;</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>character</span>
+      <span class=nt>&quot;indent_level&quot;</span><span class=p>:</span> <span class=mi>0</span><span class=p>,</span> <span class=err>//</span> <span class=err>Initial</span> <span class=err>indentation</span> <span class=err>level</span>
+      <span class=nt>&quot;indent_size&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indentation</span> <span class=err>size</span>
+      <span class=nt>&quot;indent_with_tabs&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Indent</span> <span class=err>with</span> <span class=err>tabs,</span> <span class=err>overrides</span> <span class=err>`indent_size`</span> <span class=err>and</span> <span class=err>`indent_char`</span>
+      <span class=nt>&quot;jslint_happy&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>If</span> <span class=err>true,</span> <span class=err>then</span> <span class=err>jslint-stricter</span> <span class=err>mode</span> <span class=err>is</span> <span class=err>enforced</span>
+      <span class=nt>&quot;keep_array_indentation&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Preserve</span> <span class=err>array</span> <span class=err>indentation</span>
+      <span class=nt>&quot;keep_function_indentation&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Preserve</span> <span class=err>function</span> <span class=err>indentation</span>
+      <span class=nt>&quot;max_preserve_newlines&quot;</span><span class=p>:</span> <span class=mi>3</span><span class=p>,</span> <span class=err>//</span> <span class=err>Maximum</span> <span class=err>number</span> <span class=err>of</span> <span class=err>line</span> <span class=err>breaks</span> <span class=err>to</span> <span class=err>be</span> <span class=err>preserved</span> <span class=err>in</span> <span class=err>one</span> <span class=err>chunk</span> <span class=err>(0</span> <span class=err>disables)</span>
+      <span class=nt>&quot;preserve_newlines&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span> <span class=err>//</span> <span class=err>Whether</span> <span class=err>existing</span> <span class=err>line</span> <span class=err>breaks</span> <span class=err>should</span> <span class=err>be</span> <span class=err>preserved</span>
+      <span class=nt>&quot;space_after_anon_function&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Should</span> <span class=err>the</span> <span class=err>space</span> <span class=err>before</span> <span class=err>an</span> <span class=err>anonymous</span> <span class=err>function&#39;s</span> <span class=err>parens</span> <span class=err>be</span> <span class=err>added,</span> <span class=err>`function()`</span> <span class=err>vs</span> <span class=err>`function</span> <span class=err>()`</span>
+      <span class=nt>&quot;space_before_conditional&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span> <span class=err>//</span> <span class=err>Should</span> <span class=err>the</span> <span class=err>space</span> <span class=err>before</span> <span class=err>conditional</span> <span class=err>statement</span> <span class=err>be</span> <span class=err>added,</span> <span class=err>`if(true)`</span> <span class=err>vs</span> <span class=err>`if</span> <span class=err>(true)`</span>
+      <span class=nt>&quot;space_in_empty_paren&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Add</span> <span class=err>padding</span> <span class=err>spaces</span> <span class=err>within</span> <span class=err>empty</span> <span class=err>paren,</span> <span class=err>`f()`</span> <span class=err>vs</span> <span class=err>`f(</span> <span class=err>)`</span>
+      <span class=nt>&quot;space_in_paren&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Add</span> <span class=err>padding</span> <span class=err>spaces</span> <span class=err>within</span> <span class=err>paren,</span> <span class=err>ie.</span> <span class=err>f(</span> <span class=err>a,</span> <span class=err>b</span> <span class=err>)</span>
+      <span class=nt>&quot;unescape_strings&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span> <span class=err>//</span> <span class=err>Should</span> <span class=err>printable</span> <span class=err>characters</span> <span class=err>in</span> <span class=err>strings</span> <span class=err>encoded</span> <span class=err>in</span> <span class=err>\xNN</span> <span class=err>notation</span> <span class=err>be</span> <span class=err>unescaped,</span> <span class=err>&#39;example&#39;</span> <span class=err>vs</span> <span class=err>&#39;\x65\x78\x61\x6d\x70\x6c\x65&#39;</span>
+      <span class=nt>&quot;wrap_line_length&quot;</span><span class=p>:</span> <span class=mi>0</span> <span class=err>//</span> <span class=err>Lines</span> <span class=err>should</span> <span class=err>wrap</span> <span class=err>at</span> <span class=err>next</span> <span class=err>opportunity</span> <span class=err>after</span> <span class=err>this</span> <span class=err>number</span> <span class=err>of</span> <span class=err>characters</span> <span class=err>(</span><span class=mi>0</span> <span class=err>disables)</span>
+    <span class=p>}</span>
+  <span class=p>}</span>
+</code></pre></div><p><a href=https://packagecontrol.io/packages/SublimeLinter><h2 id=SublimeLinter>SublimeLinter</h2></a></p><p>A framework for interactive code linting in the Sublime Text 3 editor.</p><ul><li><p><a href=https://packagecontrol.io/packages/SublimeLinter-contrib-eslint>SublimeLinter-contrib-eslint</a></p><p>This linter plugin for SublimeLinter provides an interface to ESLint. It will be used with files that have the “javascript” syntax, or within <code>&lt;script&gt;</code> tags in HTML files.</p></li><li><p><a href=https://packagecontrol.io/packages/SublimeLinter-jshint>SublimeLinter-jshint</a></p><p>This linter plugin for SublimeLinter provides an interface to jshint. It will be used with files that have the “JavaScript” syntax, or within <code>&lt;script&gt;</code> tags in HTML files.</p></li></ul><h4>Extra Installations</h4><div class=highlight><pre><code class="bash language-bash" data-lang=bash>  npm i -g jshint
+  npm i eslint eslint-config-airbnb eslint-plugin-html
+</code></pre></div><h4>SublimeLinter User Settings</h4><div class=highlight><pre><code class="json language-json" data-lang=json>  <span class=err>//</span> <span class=err>SublimeLinter.sublime-setting</span>
+
+  <span class=p>{</span>
+    <span class=nt>&quot;user&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;lint_mode&quot;</span><span class=p>:</span> <span class=s2>&quot;save only&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;linters&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;eslint&quot;</span><span class=p>:</span> <span class=p>{</span>
+          <span class=nt>&quot;@disable&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+          <span class=nt>&quot;args&quot;</span><span class=p>:</span> <span class=p>[],</span>
+          <span class=nt>&quot;excludes&quot;</span><span class=p>:</span> <span class=p>[</span>
+            <span class=s2>&quot;*.js&quot;</span>
+          <span class=p>]</span>
+        <span class=p>},</span>
+        <span class=nt>&quot;jshint&quot;</span><span class=p>:</span> <span class=p>{</span>
+          <span class=nt>&quot;@disable&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+          <span class=nt>&quot;args&quot;</span><span class=p>:</span> <span class=p>[],</span>
+          <span class=nt>&quot;excludes&quot;</span><span class=p>:</span> <span class=p>[</span>
+            <span class=s2>&quot;*.es6&quot;</span><span class=p>,</span>
+            <span class=s2>&quot;*.vue&quot;</span>
+          <span class=p>]</span>
+        <span class=p>}</span>
+      <span class=p>},</span>
+      <span class=nt>&quot;mark_style&quot;</span><span class=p>:</span> <span class=s2>&quot;outline&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;no_column_highlights_line&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nt>&quot;passive_warnings&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+      <span class=nt>&quot;rc_search_limit&quot;</span><span class=p>:</span> <span class=mi>3</span><span class=p>,</span>
+      <span class=nt>&quot;shell_timeout&quot;</span><span class=p>:</span> <span class=mi>10</span><span class=p>,</span>
+      <span class=nt>&quot;show_errors_on_save&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nt>&quot;show_marks_in_minimap&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nt>&quot;syntax_map&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;html (django)&quot;</span><span class=p>:</span> <span class=s2>&quot;html&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;html (rails)&quot;</span><span class=p>:</span> <span class=s2>&quot;html&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;html 5&quot;</span><span class=p>:</span> <span class=s2>&quot;html&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;javascript (babel)&quot;</span><span class=p>:</span> <span class=s2>&quot;javascript&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;magicpython&quot;</span><span class=p>:</span> <span class=s2>&quot;python&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;php&quot;</span><span class=p>:</span> <span class=s2>&quot;html&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;python django&quot;</span><span class=p>:</span> <span class=s2>&quot;python&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;pythonimproved&quot;</span><span class=p>:</span> <span class=s2>&quot;python&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;vue&quot;</span><span class=p>:</span> <span class=s2>&quot;javascript&quot;</span>
+      <span class=p>},</span>
+      <span class=nt>&quot;wrap_find&quot;</span><span class=p>:</span> <span class=kc>true</span>
+    <span class=p>}</span>
+  <span class=p>}</span>
+</code></pre></div><h4>Project Settings</h4><div class=highlight><pre><code class="json language-json" data-lang=json>  <span class=err>//</span> <span class=err>.eslintrc</span>
+
+  <span class=p>{</span>
+    <span class=nt>&quot;extends&quot;</span><span class=p>:</span> <span class=s2>&quot;airbnb/base&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;plugins&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;html&quot;</span><span class=p>],</span>
+    <span class=nt>&quot;rules&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;new-cap&quot;</span><span class=p>:</span> <span class=p>[</span><span class=mi>2</span><span class=p>,</span> <span class=p>{</span>
+        <span class=nt>&quot;newIsCap&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;capIsNewExceptions&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;$.Deferred&quot;</span><span class=p>]</span>
+      <span class=p>}],</span>
+      <span class=nt>&quot;space-before-function-paren&quot;</span><span class=p>:</span> <span class=p>[</span><span class=mi>2</span><span class=p>,</span> <span class=p>{</span>
+        <span class=nt>&quot;anonymous&quot;</span><span class=p>:</span> <span class=s2>&quot;never&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;named&quot;</span><span class=p>:</span> <span class=s2>&quot;never&quot;</span>
+      <span class=p>}],</span>
+      <span class=nt>&quot;semi&quot;</span><span class=p>:</span> <span class=p>[</span><span class=mi>2</span><span class=p>,</span> <span class=s2>&quot;never&quot;</span><span class=p>],</span>
+    <span class=p>}</span>
+  <span class=p>}</span>
+</code></pre></div><div class=highlight><pre><code class="json language-json" data-lang=json>  <span class=err>//</span> <span class=err>.jshintrc</span>
+
+  <span class=p>{</span>
+    <span class=err>/*</span>
+     <span class=err>*</span> <span class=err>ENVIRONMENTS</span>
+     <span class=err>*</span> <span class=err>=================</span>
+     <span class=err>*/</span>
+    <span class=nt>&quot;browser&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;esnext&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;jasmine&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;node&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+
+    <span class=err>/*</span>
+     <span class=err>*</span> <span class=err>ENFORCING</span> <span class=err>OPTIONS</span>
+     <span class=err>*</span> <span class=err>=================</span>
+     <span class=err>*/</span>
+    <span class=nt>&quot;eqeqeq&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;globalstrict&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;indent&quot;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+    <span class=nt>&quot;newcap&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;quotmark&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;undef&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=nt>&quot;unused&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+
+    <span class=nt>&quot;globals&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;require&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+      <span class=nt>&quot;module&quot;</span><span class=p>:</span> <span class=kc>false</span>
+    <span class=p>},</span>
+
+    <span class=err>/*</span>
+     <span class=err>*</span> <span class=err>RELAXING</span> <span class=err>OPTIONS</span>
+     <span class=err>*</span> <span class=err>=================</span>
+     <span class=err>*/</span>
+    <span class=nt>&quot;eqnull&quot;</span><span class=p>:</span> <span class=kc>true</span>
+  <span class=p>}</span>
+</code></pre></div><p><a href=#top>Back To Top</a></p><p><strong>Enjoy it!</strong></p></div><div class=ribbon><div class=rectangle><a href="/2016/01/17/mocking-module-dependencies-of-webpack/" title="Mocking a Module's Dependencies of webpack"><div class=prev><i class="fa fa-angle-left"></i></div></a><div class=curr><div class=link><i class="fa fa-link"></i> <a href="http://huntout.me/2016/01/25/sublime-text-plugins/">http://huntout.me/2016/01/25/sublime-text-plugins/</a></div><ul class=tags-box><li><i class="fa fa-tags"></i></li><li><a href=/tags/#sublime+text>sublime text</a></li></ul></div></div></div><!-- Duoshuo Comment BEGIN --><div class=ds-thread data-thread-key=/2016/01/25/sublime-text-plugins data-title="My Sublime Text 3 Plugins List" data-url="http://huntout.me/2016/01/25/sublime-text-plugins/"></div><script type=text/javascript>var duoshuoQuery = {
+  short_name: "huntout"
+};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';
+  ds.async = true;
+  ds.src = 'http://static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script><!-- Duoshuo Comment END --></div></div></div><footer><p><a rel=license href=http://creativecommons.org/licenses/by/4.0 class=cc target=_blank><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-cc.e30e.png class=cc> <img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-by.abfe.png class=cc></a> This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by/4.0 target=_blank>Creative Commons License</a></p><p>Powered by <a href=http://jekyllrb.com target=_blank>Jekyll</a> &middot; Hosted by <a href=https://github.com/huntout/huntout.github.io target=_blank>GitHub</a></p></footer></div><script src="http://tajs.qq.com/stats?sId=31233320" charset=UTF-8></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47439417-1', 'huntout.me');
+  ga('send', 'pageview');</script></body></html>

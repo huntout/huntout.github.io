@@ -49,6 +49,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://huntout.me/2016/01/25/sublime-text-plugins/</loc>
+        <lastmod>2016-01-25T10:35:19+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://huntout.me/about/</loc>
         <lastmod>2016-01-12T16:35:45+08:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -62,7 +68,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2016-01-17T19:40:34+08:00</lastmod>
+        <lastmod>2016-01-25T10:35:19+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
