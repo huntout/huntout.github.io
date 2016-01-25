@@ -32,13 +32,13 @@
 
 &lt;p&gt;Whether your making a img tag in html, setting a background image in css, or linking a .js file to your html (or whatever else people use filename paths for these days…), you can now autocomplete the filename.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.6806.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/DocBlockr&quot;&gt;&lt;h2 id=&quot;DocBlockr&quot;&gt;DocBlockr&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp;amp; C++&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.a35f.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/EditorConfig&quot;&gt;&lt;h2 id=&quot;EditorConfig&quot;&gt;EditorConfig&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -59,13 +59,13 @@
 
 &lt;p&gt;Shows diffs between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes. Can be configured to show diffs in an external diff tool&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.f019.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify&quot;&gt;&lt;h2 id=&quot;HTML-CSS-JS-Prettify&quot;&gt;HTML-CSS-JS Prettify&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via &lt;a href=&quot;https://github.com/einars/js-beautify&quot;&gt;js-beautify made by Einar Lielmanis&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.a5ac.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json language-json&quot; data-lang=&quot;json&quot;&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.jsbeautifyrc&lt;/span&gt;
 
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
