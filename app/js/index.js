@@ -26,7 +26,6 @@
       (w === 10000 && winw >= 980)
     )
   ) {
-    // console.log('noop w:', w + ', winw:', winw);
     return;
   } else {
     window.__post_grid_width = w =
@@ -35,76 +34,73 @@
       winw > 780 ? 880 :
       winw > 680 ? 780 :
       680;
-    // console.log('op w:', w);
   }
 
   var posts = document.getElementById('recent-posts'),
     child_nodes = posts.childNodes,
     k,
     node,
+    node_count = 0,
     col0 = {},
     col1 = {},
-    node_count = 0,
     is_col0,
     row0 = {},
     ELEMENT_NODE = Node ? Node.ELEMENT_NODE : 1;
 
   posts.style.position = (window.__post_grid_width <= 680) ? 'static' : 'relative';
 
-  for (k in child_nodes) {
-    if (k === 'length') {
+  for (k = 0; k < child_nodes.length; k++) {
+    node = child_nodes[k];
+    if (node.nodeType !== ELEMENT_NODE) {
       continue;
     }
-    node = child_nodes[k];
-    if (node.nodeType === ELEMENT_NODE) {
-      if (node.className === 'breaker') {
-        if (window.__post_grid_width <= 680) {
-          node.style.height = null;
-        } else {
-          node.style.height = (Math.max(col0.y, col1.y) - row0.y) + 'px';
-        }
-        break;
-      }
-      if (col0.y === undefined) {
-        col0.x = 0;
-        col0.y = node.clientHeight - 1;
-        col0.w = node.clientWidth;
-        row0.y = col0.y;
+    if (node.className === 'breaker') {
+      if (window.__post_grid_width <= 680) {
+        node.style.height = null;
       } else {
-        if (col1.y === undefined) {
-          col1.x = col0.w - 1;
-          col1.y = 0;
-          col1.w = col0.w + 1;
-        }
-        if (window.__post_grid_width <= 680) {
-          // console.log('clear');
-          node.style.position = 'static';
-          node.style.width = null;
-          node.style.left = null;
-          node.style.top = null;
+        node.style.height = (Math.max(col0.y, col1.y) - row0.y) + 'px';
+      }
+      break;
+    }
+    if (col0.y === undefined) {
+      col0.x = 0;
+      col0.y = node.clientHeight - 1;
+      col0.w = node.clientWidth;
+      row0.y = col0.y;
+    } else {
+      if (col1.y === undefined) {
+        col1.x = col0.w - 1;
+        col1.y = 0;
+        col1.w = col0.w + 1;
+      }
+      if (window.__post_grid_width <= 680) {
+        node.style.position = 'static';
+        node.style.width = null;
+        node.style.left = null;
+        node.style.top = null;
+      } else {
+        is_col0 = col0.y <= col1.y + 5;
+        node.style.position = 'absolute';
+        if (is_col0) {
+          // node.style.width = col0.w + 'px';
+          node.style.left = col0.x + 'px';
+          node.style.top = col0.y + 'px';
+          col0.y += node.clientHeight - 1;
         } else {
-          is_col0 = col0.y <= col1.y + 5;
-          node.style.position = 'absolute';
-          if (is_col0) {
-            // node.style.width = col0.w + 'px';
-            node.style.left = col0.x + 'px';
-            node.style.top = col0.y + 'px';
-            col0.y += node.clientHeight - 1;
-          } else {
-            node.style.width = col1.w + 'px';
-            node.style.left = col1.x + 'px';
-            node.style.top = col1.y + 'px';
-            col1.y += node.clientHeight - 1;
-          }
+          node.style.width = col1.w + 'px';
+          node.style.left = col1.x + 'px';
+          node.style.top = col1.y + 'px';
+          col1.y += node.clientHeight - 1;
         }
       }
-      // node.title = [
-      //   node.offsetLeft,
-      //   node.offsetTop,
-      //   node.offsetLeft + node.clientWidth,
-      //   node.offsetTop + node.clientHeight
-      // ];
-      ++node_count;
     }
+    node_count++;
+    // console.debug(
+    //   node_count,
+    //   node.offsetTop,
+    //   node.offsetLeft + node.clientWidth,
+    //   node.offsetTop + node.clientHeight,
+    //   node.offsetLeft
+    // );
   }
 });

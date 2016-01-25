@@ -203,7 +203,7 @@ module.exports = function(grunt) {
         return {
           options: {
             patterns: [{
-              match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.png)', 'g'),
+              match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.(?:png|gif))', 'g'),
               replacement: function(s) {
                 var dist = grunt.config.data.yeoman.dist;
                 var cdnurl_ = RegExp.$1;
@@ -219,7 +219,7 @@ module.exports = function(grunt) {
               match: /(=)(\/css\/[^\.]+\..{4}\.css)/g,
               replacement: '$1' + cdnurl + '$2'
             }, {
-              match: /(=)(\/img\/[^\.]+\..{4}\.png)/g,
+              match: /(=)(\/img\/[^\.]+\..{4}\.(?:png|gif))/g,
               replacement: '$1' + cdnurl + '$2'
             }, {
               match: /(=)(\/js\/[^\.]+\..{4}\.js)/g,
