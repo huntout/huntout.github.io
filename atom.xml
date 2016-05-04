@@ -3,12 +3,57 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2016-01-25T00:00:00+08:00</updated>
+  <updated>2016-05-04T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>怎样让 Windows XP 识别 WD My Passport 移动硬盘？</title>
+    <link href="http://huntout.me/2016/05/04/westdata-my-passport-winxp/"/>
+    <updated>2016-05-04T00:00:00+08:00</updated>
+    <id>http://huntout.me/2016/05/04/westdata-my-passport-winxp</id>
+    <content type="html">&lt;p&gt;有位朋友还在使用 XP 系统，无法识别新买的 &lt;a href=&quot;http://item.jd.com/1639343.html&quot;&gt;WD My Passport 移动硬盘&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;下面是操作方法：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将移动硬盘插入 USB 口，最好是 PC 机箱后面的 USB 口，前面的 USB 口可能电压不够&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;首先安装缺失的驱动 &lt;a href=&quot;http://download.wdc.com/smartware/WD_SES_Driver_Setup_x86.zip&quot;&gt;WD SES Driver (32-bit)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;清除移动硬盘的 GPT 保护分区&lt;/p&gt;
+
+&lt;p&gt;打开 DOS 命令行，运行命令 &lt;code&gt;diskpart&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;DISKPART&amp;gt; list disk
+
+磁盘 ###  状态          大小     可用     Dyn  Gpt
+--------  ------------- -------  -------  ---  --- 
+磁盘 0    联机           465 GB      0 B
+磁盘 1    联机           931 GB      0 B        是
+
+DISKPART&amp;gt; select disk 1
+
+磁盘 1 现在是所选磁盘。
+
+DISKPART&amp;gt; clean all
+
+清除硬盘所有分区。
+
+DISKPART&amp;gt; create partition primary
+
+创建新的 MBR 主分区。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;此时，启动“磁盘管理”可初始化磁盘。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>My Sublime Text 3 Plugins List</title>

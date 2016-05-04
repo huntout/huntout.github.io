@@ -55,6 +55,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://huntout.me/2016/05/04/westdata-my-passport-winxp/</loc>
+        <lastmod>2016-05-04T10:08:52+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://huntout.me/about/</loc>
         <lastmod>2016-01-12T16:35:45+08:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -68,7 +74,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2016-01-25T14:35:54+08:00</lastmod>
+        <lastmod>2016-05-04T10:08:52+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
