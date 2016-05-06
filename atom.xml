@@ -3,12 +3,51 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2016-05-04T00:00:00+08:00</updated>
+  <updated>2016-05-06T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>adb connect android device via WiFi without root</title>
+    <link href="http://huntout.me/2016/05/06/android-adb-connect-without-root/"/>
+    <updated>2016-05-06T00:00:00+08:00</updated>
+    <id>http://huntout.me/2016/05/06/android-adb-connect-without-root</id>
+    <content type="html">&lt;p&gt;How to connect your android device via WiFi without root?&lt;/p&gt;
+
+&lt;h4&gt;Steps to get it working:&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Enable USB Debugging on your android device.&lt;/li&gt;
+&lt;li&gt;Connect your android device via usb cable to your PC.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;adb tcpip 5555&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;adb connect your-android-device-ip&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Now you can pull out your usb cable.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;To revert back to using adb via usb:&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Connect your android device via usb cable to your PC.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;adb usb&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Notes:&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The device may also revert back to USB mode after reboot.&lt;/li&gt;
+&lt;li&gt;USB debugging must be enabled on your device.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>怎样让 Windows XP 识别 WD My Passport 移动硬盘？</title>
@@ -682,143 +721,6 @@ reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\she
 &lt;li&gt;在文件夹或资源管理器的背景空白处点右键会出现 &amp;quot;Open Folder as Sublime Project&amp;quot;&lt;/li&gt;
 &lt;li&gt;带有 &lt;code&gt;/v &amp;quot;Icon&amp;quot;&lt;/code&gt; 的那几行是增加菜单项前的图标，如果你不需要可以删掉它&lt;/li&gt;
 &lt;li&gt;注意参数中的用到的 &lt;code&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/code&gt;，参考&lt;a href=&quot;http://stackoverflow.com/questions/7760545/cmd-escape-double-quotes-in-parameter&quot;&gt;这里&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>使用Jekyll与GitHub Pages构建网站</title>
-    <link href="http://huntout.me/2014/01/26/jekyll-github/"/>
-    <updated>2014-01-26T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/01/26/jekyll-github</id>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/01/26/jekyll-github/octojekyll.484f.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;本博开篇，按例介绍一下使用 &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; 与 &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; 构建网站的流程，一为后来者造福，二为自己留个记录。&lt;/p&gt;
-
-&lt;h2&gt;准备&lt;/h2&gt;
-
-&lt;p&gt;我搭建的过程大部分也是乘着前人栽树的阴凉，下面是我建议的&lt;strong&gt;阅读清单&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门 (阮一峰)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;看完你应该有整体概念了，但这是 2012年写的，现在GitHub 除了支持 Project site (&lt;code&gt;gh_pages&lt;/code&gt; branch)，还支持 User or organization site (&lt;code&gt;username.github.io&lt;/code&gt; repository)。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html&quot;&gt;Running Jekyll on Windows (Madhur Ahuja)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在 Windows 上安装运行 Jekyll。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;Using Jekyll with Pages (GitHub help)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;本篇重点在搭建与 GitHub Pages 相同的 Jekyll 环境，保证本地调试与最终发布的页面一致。&lt;/p&gt;
-
-&lt;p&gt;特别说明一下，我的Gemfile如下&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://ruby.taobao.org&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;github-pages&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;wdm&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;使用了淘宝搭建的 &lt;a href=&quot;http://ruby.taobao.org&quot;&gt;RubyGems 镜像&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;wdm&lt;/code&gt;: Windows Directory Monitor (WDM) is a library which can be used to monitor directories for changes.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;步骤&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;My OS: Windows 7 64 bits&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;Ruby 1.9&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Add &lt;code&gt;C:\Ruby193\bin&lt;/code&gt; to Path&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;Ruby Development Kit for Ruby 1.9&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Extract it to &lt;code&gt;C:\devkit&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\devkit&amp;gt;ruby dk.rb init
-C:\devkit&amp;gt;ruby dk.rb install
-C:\devkit&amp;gt;ruby -v
-ruby 1.9.3p484 (2013-11-22) [i386-mingw32]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install &lt;a href=&quot;http://gnuwin32.sourceforge.net/packages.html&quot;&gt;Which and Wget for Windows&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Add &lt;code&gt;C:\Program Files (x86)\GnuWin32\bin&lt;/code&gt; to Path&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\&amp;gt;which which
-C:\Program Files (x86)\GnuWin32\bin\which.EXE
-C:\&amp;gt;which wget
-C:\Program Files (x86)\GnuWin32\bin\wget.EXE
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install Python&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\temp&amp;gt;wget -nc python.org/ftp/python/2.7.2/python-2.7.2.msi
-C:\temp&amp;gt;msiexec -qn -i python-2.7.2.msi ADDLOCAL=&amp;quot;DefaultFeature&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Add &lt;code&gt;C:\Python27&lt;/code&gt; to Path&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install easy_install&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\temp&amp;gt;wget -nc peak.telecommunity.com/dist/ez_setup.py
-C:\temp&amp;gt;python ez_setup.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Add &lt;code&gt;C:\Python27\Scripts&lt;/code&gt; to Path&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install Pygments&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\&amp;gt;easy_install Pygments
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;diff language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;--- C:\Ruby193\lib\ruby\gems\1.9.1\gems\pygments.rb-0.5.4\lib\pygments\popen.rb&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+++ C:\Ruby193\lib\ruby\gems\1.9.1\gems\pygments.rb-0.5.4\lib\pygments\popen.rb (Unsaved)&lt;/span&gt;
-&lt;span class=&quot;gu&quot;&gt;@@ -46,8 +46,8 @@&lt;/span&gt;
- # something like that.
- def python_binary
-   @python_binary ||= begin
-&lt;span class=&quot;gd&quot;&gt;-        `which python2`&lt;/span&gt;
-&lt;span class=&quot;gd&quot;&gt;-        $?.success? ? &amp;quot;python2&amp;quot; : &amp;quot;python&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+        `which python`&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+        $?.success? ? &amp;quot;python&amp;quot; : &amp;quot;python2&amp;quot;&lt;/span&gt;
-   end
- end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install bundler&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\&amp;gt;gem install bundler
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create your Github Pages repository&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fork &lt;a href=&quot;https://github.com/huntout/rsms.github.com&quot;&gt;rsms.github.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Rename repository to &lt;code&gt;yourname.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Edit &lt;code&gt;CNAME&lt;/code&gt; to match your domain&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Clone &lt;code&gt;yourname.github.io&lt;/code&gt; to locale&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\&amp;gt;git clone git@github.com:yourname/yourname.github.io.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;由于 GitHub Pages 不支持自定义 &lt;a href=&quot;http://jekyllrb.com/docs/plugins/&quot;&gt;plugins&lt;/a&gt;，我采用了 &lt;a href=&quot;https://github.com/robwierzbowski/generator-jekyllrb&quot;&gt;generator-jekyllrb&lt;/a&gt;。源文件在 &lt;code&gt;yo&lt;/code&gt; 分支，使用 Grunt 自动编译发布到 &lt;code&gt;master&lt;/code&gt; 分支。(Updated on Feb 05, 2014)&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Bundle&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;C:\yourname.github.io&amp;gt;bundle install
-C:\yourname.github.io&amp;gt;bundle exec jekyll serve --watch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;if you meet &lt;code&gt;error: Invalid argument - C:/yourname.github.io/_site/C:.&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;diff language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;--- C:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.4.3\lib\jekyll\page.rb&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+++ C:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.4.3\lib\jekyll\page.rb (Unsaved)&lt;/span&gt;
-&lt;span class=&quot;gu&quot;&gt;@@ -133,7 +133,7 @@&lt;/span&gt;
- #
- # Returns the destination file path String.
- def destination(dest)
-&lt;span class=&quot;gd&quot;&gt;-      path = File.join(dest, File.expand_path(self.url, &amp;quot;/&amp;quot;))&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+      path = File.join(dest, self.url)&lt;/span&gt;
-   path = File.join(path, &amp;quot;index.html&amp;quot;) if self.url =~ /\/$/
-   path
- end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;diff language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;--- C:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.4.3\lib\jekyll\post.rb&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+++ C:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.4.3\lib\jekyll\post.rb (Unsaved)&lt;/span&gt;
-&lt;span class=&quot;gu&quot;&gt;@@ -266,7 +266,7 @@&lt;/span&gt;
- # Returns destination file path String.
- def destination(dest)
-   # The url needs to be unescaped in order to preserve the correct filename
-&lt;span class=&quot;gd&quot;&gt;-      path = File.join(dest, File.expand_path(CGI.unescape(self.url), &amp;quot;/&amp;quot;))&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+      path = File.join(dest, CGI.unescape(self.url))&lt;/span&gt;
-   path = File.join(path, &amp;quot;index.html&amp;quot;) if path[/\.html$/].nil?
-   path
- end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
