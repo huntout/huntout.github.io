@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://huntout.me/2014/01/26/jekyll-github/</loc>
-        <lastmod>2016-01-12T16:35:45+08:00</lastmod>
+        <lastmod>2017-04-01T11:52:48+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -14,13 +14,13 @@
     </url>
     <url>
         <loc>http://huntout.me/2014/02/11/css-height-100/</loc>
-        <lastmod>2016-01-12T16:35:45+08:00</lastmod>
+        <lastmod>2017-04-01T11:52:54+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://huntout.me/2014/02/13/gitosis/</loc>
-        <lastmod>2016-01-12T16:35:45+08:00</lastmod>
+        <lastmod>2017-04-01T11:53:05+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -67,6 +67,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://huntout.me/2017/04/01/replace-duoshuo-to-disqus/</loc>
+        <lastmod>2017-04-01T12:56:17+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://huntout.me/about/</loc>
         <lastmod>2016-01-12T16:35:45+08:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -80,7 +86,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2016-05-06T12:08:26+08:00</lastmod>
+        <lastmod>2017-04-01T12:56:17+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

@@ -23,17 +23,17 @@ sudo -H -u git gitosis-init &lt; /tmp/your_id_rsa.pub
 sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
 </code></pre></div><blockquote><p>For now, gitosis uses the HOME environment variable to locate where to write its files. If you use sudo -u without -H, sudo will leave the old value of HOME in place, and this will cause trouble. There will be a workaround for that later on, but for now, always remember to use -H if you&#39;re sudoing to the account. (<a href=https://github.com/tv42/gitosis#setting-up>gitosis</a>)</p></blockquote><h2>Config gitosis on localhost</h2><div class=highlight><pre><code class="bash language-bash" data-lang=bash><span class=c># localhost</span>
 git clone git@YOUR_SERVER:gitosis-admin.git
-</code></pre></div><p>For more config detail, please reference <a href=http://git-scm.com/book/en/Git-on-the-Server-Gitosis>the Git Book</a>（<a href=http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitosis>中文</a>）.</p></div><div class=ribbon><div class=rectangle><a href="/2014/02/11/css-height-100/" title="CSS Height 100%"><div class=prev><i class="fa fa-angle-left"></i></div></a> <a href="/2014/03/24/beauty-code-font/" title="Beauty Code Font on Windows"><div class=next><i class="fa fa-angle-right"></i></div></a><div class=curr><div class=link><i class="fa fa-link"></i> <a href="http://huntout.me/2014/02/13/gitosis/">http://huntout.me/2014/02/13/gitosis/</a></div><ul class=tags-box><li><i class="fa fa-tags"></i></li><li><a href=/tags/#git>git</a></li></ul></div></div></div><!-- Duoshuo Comment BEGIN --><div class=ds-thread data-thread-key=/2014/02/13/gitosis data-title="Install gitosis on Ubuntu" data-url="http://huntout.me/2014/02/13/gitosis/"></div><script type=text/javascript>var duoshuoQuery = {
-  short_name: "huntout"
-};
-(function() {
-  var ds = document.createElement('script');
-  ds.type = 'text/javascript';
-  ds.async = true;
-  ds.src = 'http://static.duoshuo.com/embed.js';
-  ds.charset = 'UTF-8';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();</script><!-- Duoshuo Comment END --></div></div></div><footer><p><a rel=license href=http://creativecommons.org/licenses/by/4.0 class=cc target=_blank><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-cc.e30e.png class=cc> <img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-by.abfe.png class=cc></a> This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by/4.0 target=_blank>Creative Commons License</a></p><p>Powered by <a href=http://jekyllrb.com target=_blank>Jekyll</a> &middot; Hosted by <a href=https://github.com/huntout/huntout.github.io target=_blank>GitHub</a></p></footer></div><script src="http://tajs.qq.com/stats?sId=31233320" charset=UTF-8></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+</code></pre></div><p>For more config detail, please reference <a href=http://git-scm.com/book/en/Git-on-the-Server-Gitosis>the Git Book</a>（<a href=http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitosis>中文</a>）.</p></div><div class=ribbon><div class=rectangle><a href="/2014/02/11/css-height-100/" title="CSS Height 100%"><div class=prev><i class="fa fa-angle-left"></i></div></a> <a href="/2014/03/24/beauty-code-font/" title="Beauty Code Font on Windows"><div class=next><i class="fa fa-angle-right"></i></div></a><div class=curr><div class=link><i class="fa fa-link"></i> <a href="http://huntout.me/2014/02/13/gitosis/">http://huntout.me/2014/02/13/gitosis/</a></div><ul class=tags-box><li><i class="fa fa-tags"></i></li><li><a href=/tags/#git>git</a></li></ul></div></div></div><div id=disqus_thread></div><script>var disqus_config = function() {
+        this.page.url = 'http://huntout.me/2014/02/13/gitosis/';
+        this.page.identifier = '/2014/02/13/gitosis';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+        s.src = 'https://huntout.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></div><footer><p><a rel=license href=http://creativecommons.org/licenses/by/4.0 class=cc target=_blank><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-cc.e30e.png class=cc> <img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-by.abfe.png class=cc></a> This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by/4.0 target=_blank>Creative Commons License</a></p><p>Powered by <a href=http://jekyllrb.com target=_blank>Jekyll</a> &middot; Hosted by <a href=https://github.com/huntout/huntout.github.io target=_blank>GitHub</a></p></footer></div><script src="http://tajs.qq.com/stats?sId=31233320" charset=UTF-8></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');

@@ -3,12 +3,35 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2016-05-06T00:00:00+08:00</updated>
+  <updated>2017-04-01T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>迁移多说到disqus</title>
+    <link href="http://huntout.me/2017/04/01/replace-duoshuo-to-disqus/"/>
+    <updated>2017-04-01T00:00:00+08:00</updated>
+    <id>http://huntout.me/2017/04/01/replace-duoshuo-to-disqus</id>
+    <content type="html">&lt;p&gt;多说6月1日就要关闭了，迁移评论系统为 disqus。&lt;/p&gt;
+
+&lt;p&gt;迁移很简单，按照 &lt;a href=&quot;https://disqus.com&quot;&gt;disqus&lt;/a&gt; 的说明将 &lt;code&gt;_includes/comments.html&lt;/code&gt; 里的代码替换就OK了。&lt;/p&gt;
+
+&lt;p&gt;注意一下几个变量的设置：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;{{ page.url | prepend: site.baseurl }}&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;{{ page.id }}&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;遗憾的是必须科学上网才能正常使用。先这样吧！&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>adb connect android device via WiFi without root</title>
@@ -673,55 +696,6 @@ git clone git@YOUR_SERVER:gitosis-admin.git
 &lt;p&gt;这里是 &lt;a href=&quot;http://jsbin.com/tahim/1/edit?html,css,output&quot;&gt;Demo&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;取自 StackOverflow 上的问答 &lt;a href=&quot;http://stackoverflow.com/questions/11812759/css3-height-100&quot;&gt;CSS3 Height 100%&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Windows 下建立文件及文件夹的 “Open with Sublime Text 2” 右键菜单</title>
-    <link href="http://huntout.me/2014/02/07/sublime-text-shell/"/>
-    <updated>2014-02-07T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/02/07/sublime-text-shell</id>
-    <content type="html">&lt;p&gt;一般建立 “Open With Sublime Text” 右键菜单的办法是&lt;a href=&quot;http://superuser.com/questions/412312/can-i-right-click-a-folder-in-windows-7-and-choose-open-with-sublime-text&quot;&gt;导入注册表文件&lt;/a&gt;，但是你可能使用的是 Sublime Text 2 的 Portable 版本，还需要修改 &lt;code&gt;.reg&lt;/code&gt; 文件中 &lt;code&gt;sublime_text.exe&lt;/code&gt; 的路径，这里给出&lt;strong&gt;更好的&lt;/strong&gt;办法。&lt;/p&gt;
-
-&lt;h2&gt;步骤&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;把以下保存成 &lt;code&gt;.bat&lt;/code&gt; 文件&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bat language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ST_BIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;%~dp0sublime_text.exe&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\*\shell\Sublime Text 2&amp;quot;&lt;/span&gt;                            &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Open with Sublime Text 2&amp;quot;&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\*\shell\Sublime Text 2&amp;quot;&lt;/span&gt;                            &lt;span class=&quot;n&quot;&gt;/v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN%,0&amp;quot;&lt;/span&gt;                     &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\*\shell\Sublime Text 2\command&amp;quot;&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN% &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%%1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\shell\Sublime Text 2&amp;quot;&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Open Folder as Sublime Project&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\shell\Sublime Text 2&amp;quot;&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;/v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN%,0&amp;quot;&lt;/span&gt;                     &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\shell\Sublime Text 2\command&amp;quot;&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN% &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%%V&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\shell\Sublime Text 2&amp;quot;&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Open Folder as Sublime Project&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\shell\Sublime Text 2&amp;quot;&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;/v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN%,0&amp;quot;&lt;/span&gt;                     &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-reg add &lt;span class=&quot;s2&quot;&gt;&amp;quot;HKCR\Directory\Background\shell\Sublime Text 2\command&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/ve&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;/d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%ST_BIN% &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%%V&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;/f&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt;.
-&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;pause&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;放到 &lt;code&gt;sublime_text.exe&lt;/code&gt; 所在目录下&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;以管理员身份运行该 &lt;code&gt;.bat&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;说明&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在文件上点右键会出现 &amp;quot;Open with Sublime Text 2&amp;quot;&lt;/li&gt;
-&lt;li&gt;在文件夹或资源管理器的背景空白处点右键会出现 &amp;quot;Open Folder as Sublime Project&amp;quot;&lt;/li&gt;
-&lt;li&gt;带有 &lt;code&gt;/v &amp;quot;Icon&amp;quot;&lt;/code&gt; 的那几行是增加菜单项前的图标，如果你不需要可以删掉它&lt;/li&gt;
-&lt;li&gt;注意参数中的用到的 &lt;code&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/code&gt;，参考&lt;a href=&quot;http://stackoverflow.com/questions/7760545/cmd-escape-double-quotes-in-parameter&quot;&gt;这里&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
 </content>
