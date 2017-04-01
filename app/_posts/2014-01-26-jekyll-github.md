@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: yes
-tags: jekyll github
+tags: [jekyll, github]
 title: "使用Jekyll与GitHub Pages构建网站"
 description: "本博开篇，按例介绍一下使用 Jekyll 与 GitHub Pages 构建网站的流程，一为后来者造福，二为自己留个记录。"
 ---
