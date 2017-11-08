@@ -204,10 +204,10 @@ module.exports = function(grunt) {
           options: {
             patterns: [{
               match: new RegExp('(' + RegExp.escape(cdnurl) + '\\/)(.+?\\.(?:png|gif))', 'g'),
-              replacement: function(s) {
+              replacement: function(s, m1, m2) {
                 var dist = grunt.config.data.yeoman.dist;
-                var cdnurl_ = RegExp.$1;
-                var src = path.join(dist, RegExp.$2);
+                var cdnurl_ = m1;
+                var src = path.join(dist, m2);
                 var rev = grunt.filerev.summary[src];
                 if (rev) {
                   rev = path.relative(dist, rev).replace(/\\/g, '/');
