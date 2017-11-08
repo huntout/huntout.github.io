@@ -3,12 +3,86 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2017-04-01T00:00:00+08:00</updated>
+  <updated>2017-11-07T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>在 Windows 上安装 OpenCV-Python 开发环境</title>
+    <link href="http://huntout.me/2017/11/07/setup-opecv-python-dev-env-in-windows/"/>
+    <updated>2017-11-07T00:00:00+08:00</updated>
+    <id>http://huntout.me/2017/11/07/setup-opecv-python-dev-env-in-windows</id>
+    <content type="html">&lt;h1&gt;目标&lt;/h1&gt;
+
+&lt;p&gt;在这个教程我们将学习&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如何在 Windows 上安装 OpenCV-Python&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如何在 Visual Code 上安装配置 Python 插件&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;安装 Python2 以及 pip&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如果你已经安装了 Python 2.7.9+，请跳过这一节&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果你安装的是 Python 2 ≤ 2.7.8，请按以下说明安装 pip&lt;/p&gt;
+
+&lt;p&gt;2.1. 参考 &lt;a href=&quot;https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip&quot;&gt;pip 官方说明&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.2. 下载 &lt;a href=&quot;https://bootstrap.pypa.io/get-pip.py&quot;&gt;&lt;code&gt;get-pip.py&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.3. 运行&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python get-pip.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;2.4. 升级 pip&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install -U pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果你没有安装 Python，请直接安装 &lt;a href=&quot;https://www.python.org/ftp/python/2.7.14/python-2.7.14.msi&quot;&gt;Python 2.7.14&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1&gt;安装 OpenCV&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装 &lt;code&gt;numpy&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开 Python IDLE 输入&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;验证是否安装成功&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;从 &lt;a href=&quot;https://sourceforge.net/projects/opencvlibrary/files/latest/download&quot;&gt;Sourceforge&lt;/a&gt; 下载最新的 OpenCV release 并且运行解压缩&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开解压缩后的目录 &lt;code&gt;opencv/build/python/2.7&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;拷贝 &lt;code&gt;cv2.pyd&lt;/code&gt; 到 &lt;code&gt;C:/Python27/lib/site-packeges&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开 Python IDLE 输入&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import cv2
+&amp;gt;&amp;gt;&amp;gt; print cv2.__version__
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;验证是否安装成功&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1&gt;安装配置 VS Code Python 插件&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装 Python 插件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;根据需要安装 Python 的 pylint 模块&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-pylint.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install pylint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>迁移多说到disqus</title>
@@ -141,13 +215,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Whether your making a img tag in html, setting a background image in css, or linking a .js file to your html (or whatever else people use filename paths for these days…), you can now autocomplete the filename.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.6806.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/DocBlockr&quot;&gt;&lt;h2 id=&quot;DocBlockr&quot;&gt;DocBlockr&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp;amp; C++&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.a35f.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/EditorConfig&quot;&gt;&lt;h2 id=&quot;EditorConfig&quot;&gt;EditorConfig&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -168,13 +242,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Shows diffs between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes. Can be configured to show diffs in an external diff tool&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.f019.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify&quot;&gt;&lt;h2 id=&quot;HTML-CSS-JS-Prettify&quot;&gt;HTML-CSS-JS Prettify&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via &lt;a href=&quot;https://github.com/einars/js-beautify&quot;&gt;js-beautify made by Einar Lielmanis&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.a5ac.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json language-json&quot; data-lang=&quot;json&quot;&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.jsbeautifyrc&lt;/span&gt;
 
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -514,10 +588,10 @@ DISKPART&amp;gt; create partition primary
 &lt;li&gt;&lt;p&gt;单击“开始”按钮，在搜索框中键入 msconfig，然后单击‌ “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“选择性启动”，然后清除“加载启动项”复选框。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.f8a8.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;依次单击“服务”、“隐藏所有 Microsoft 服务”，然后单击“全部禁用”。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.6191.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;通过单击「开始」按钮，打开 “Windows Update”。 在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在左窗格中，单击“检查更新”，然后等待 Windows 查找计算机的最新更新。&lt;/p&gt;&lt;/li&gt;
@@ -541,22 +615,22 @@ DISKPART&amp;gt; create partition primary
     <id>http://huntout.me/2014/03/24/beauty-code-font</id>
     <content type="html">&lt;p&gt;在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.1211.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
 
 &lt;h1&gt;MacType&lt;/h1&gt;
 
 &lt;p&gt;一款模仿 Mac 的字体渲染风格的软件，先看看效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.d3be.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载安装 &lt;a href=&quot;&quot;&gt;https://code.google.com/p/mactype/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;配置使用服务模式，最为方便&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.613c.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;服务已启动&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1&gt;Monaco Font&lt;/h1&gt;
@@ -637,67 +711,6 @@ sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
 git clone git@YOUR_SERVER:gitosis-admin.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For more config detail, please reference &lt;a href=&quot;http://git-scm.com/book/en/Git-on-the-Server-Gitosis&quot;&gt;the Git Book&lt;/a&gt;（&lt;a href=&quot;http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitosis&quot;&gt;中文&lt;/a&gt;）.&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>CSS Height 100%</title>
-    <link href="http://huntout.me/2014/02/11/css-height-100/"/>
-    <updated>2014-02-11T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/02/11/css-height-100</id>
-    <content type="html">&lt;p&gt;使用纯 CSS 实现 Height 100% 布局。&lt;/p&gt;
-
-&lt;p&gt;CSS:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#head&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#98a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#footer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#e46&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#dee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;HTML:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;head&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#head&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;footer&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#footer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;content&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这里是 &lt;a href=&quot;http://jsbin.com/tahim/1/edit?html,css,output&quot;&gt;Demo&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;取自 StackOverflow 上的问答 &lt;a href=&quot;http://stackoverflow.com/questions/11812759/css3-height-100&quot;&gt;CSS3 Height 100%&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
 </content>
     <author>
       <name>Huntout Zhang</name>

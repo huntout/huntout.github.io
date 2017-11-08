@@ -38,7 +38,7 @@
     </url>
     <url>
         <loc>http://huntout.me/2016/01/14/extending-android-build-files-in-cordova/</loc>
-        <lastmod>2016-01-17T17:16:07+08:00</lastmod>
+        <lastmod>2017-11-08T13:05:04+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -73,6 +73,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://huntout.me/2017/11/07/setup-opecv-python-dev-env-in-windows/</loc>
+        <lastmod>2017-11-08T13:12:39+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://huntout.me/about/</loc>
         <lastmod>2016-01-12T16:35:45+08:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -86,7 +92,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2017-04-01T12:56:17+08:00</lastmod>
+        <lastmod>2017-11-08T13:12:39+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
