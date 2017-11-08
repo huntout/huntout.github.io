@@ -3,8 +3,6 @@ layout: post
 comments: yes
 tags: [cordova, android]
 title: "Extending Android Build Files In Cordova"
-photo_url: "cordova_bot.png"
-photo_title: "Extending Android Build Files In Cordova"
 ---
 
 最近流行 [Cordova].
