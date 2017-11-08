@@ -68,10 +68,10 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;安装 Python 插件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-python.efbb.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;根据需要安装 Python 的 pylint 模块&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-pylint.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-pylint.b341.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install pylint
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -215,13 +215,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Whether your making a img tag in html, setting a background image in css, or linking a .js file to your html (or whatever else people use filename paths for these days…), you can now autocomplete the filename.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/AutoFileName.6806.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/DocBlockr&quot;&gt;&lt;h2 id=&quot;DocBlockr&quot;&gt;DocBlockr&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp;amp; C++&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/DocBlockr.a35f.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/EditorConfig&quot;&gt;&lt;h2 id=&quot;EditorConfig&quot;&gt;EditorConfig&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -242,13 +242,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Shows diffs between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes. Can be configured to show diffs in an external diff tool&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/FileDiffs.f019.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify&quot;&gt;&lt;h2 id=&quot;HTML-CSS-JS-Prettify&quot;&gt;HTML-CSS-JS Prettify&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via &lt;a href=&quot;https://github.com/einars/js-beautify&quot;&gt;js-beautify made by Einar Lielmanis&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.a5ac.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json language-json&quot; data-lang=&quot;json&quot;&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.jsbeautifyrc&lt;/span&gt;
 
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -588,10 +588,10 @@ DISKPART&amp;gt; create partition primary
 &lt;li&gt;&lt;p&gt;单击“开始”按钮，在搜索框中键入 msconfig，然后单击‌ “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“选择性启动”，然后清除“加载启动项”复选框。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.f8a8.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;依次单击“服务”、“隐藏所有 Microsoft 服务”，然后单击“全部禁用”。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.6191.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;通过单击「开始」按钮，打开 “Windows Update”。 在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在左窗格中，单击“检查更新”，然后等待 Windows 查找计算机的最新更新。&lt;/p&gt;&lt;/li&gt;
@@ -615,22 +615,22 @@ DISKPART&amp;gt; create partition primary
     <id>http://huntout.me/2014/03/24/beauty-code-font</id>
     <content type="html">&lt;p&gt;在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.1211.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
 
 &lt;h1&gt;MacType&lt;/h1&gt;
 
 &lt;p&gt;一款模仿 Mac 的字体渲染风格的软件，先看看效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.d3be.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载安装 &lt;a href=&quot;&quot;&gt;https://code.google.com/p/mactype/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;配置使用服务模式，最为方便&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.613c.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;服务已启动&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1&gt;Monaco Font&lt;/h1&gt;
