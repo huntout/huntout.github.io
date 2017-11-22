@@ -12,9 +12,9 @@
   
   <entry>
     <title>在 Windows 上安装 OpenCV-Python 开发环境</title>
-    <link href="http://huntout.me/2017/11/07/setup-opecv-python-dev-env-in-windows/"/>
+    <link href="http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows/"/>
     <updated>2017-11-07T00:00:00+08:00</updated>
-    <id>http://huntout.me/2017/11/07/setup-opecv-python-dev-env-in-windows</id>
+    <id>http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows</id>
     <content type="html">&lt;h1&gt;目标&lt;/h1&gt;
 
 &lt;p&gt;在这个教程我们将学习&lt;/p&gt;
@@ -68,10 +68,10 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;安装 Python 插件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-python.efbb.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-python.efbb.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;根据需要安装 Python 的 pylint 模块&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opecv-python-dev-env-in-windows/vscode-pylint.b341.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-pylint.b341.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install pylint
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
