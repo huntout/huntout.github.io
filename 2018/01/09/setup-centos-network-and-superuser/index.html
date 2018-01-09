@@ -1,0 +1,51 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>CentOS 6.9 配置静态IP与超级用户 &mdash; huntout.me</title><meta name=viewport content="width=device-width, initial-scale=1"><meta property=og:title content="CentOS 6.9 配置静态IP与超级用户"><meta name=description content="在这个教程我们将学习 CentOS 6.9 minimal 安装好后，如何配置静态IP与超级用户"><meta name=og:description content="在这个教程我们将学习 CentOS 6.9 minimal 安装好后，如何配置静态IP与超级用户"><meta name=twitter:card content=summary><meta name=twitter:site content=@huntout><meta property=og:url content="http://huntout.me/2018/01/09/setup-centos-network-and-superuser/"><meta property=og:site_name content=huntout.me><meta property=og:type content=article><meta property=og:locale content=zh_CN><meta property=article:published_time content=2018-01-09><!-- Place favicon.ico and apple-touch-icon(s) in the root directory --><!-- rss --><link rel=alternate type=application/atom+xml title=huntout.me href=http://feeds.feedburner.com/huntout><link rel=stylesheet href=http://7d9ouh.com1.z0.glb.clouddn.com/css/main.8cc0.css><script src=http://7d9ouh.com1.z0.glb.clouddn.com/js/head-scripts.d494.js></script></head><body><!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><div class=body-wrapper><header><h1 class=logo onclick="document.location.href='/'"><a href="/"><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/logo.a4f1.png alt=huntout.me></a></h1><ul class=navigation><li><a href="/archive/" title="Archive posts">Archive</a></li><li><a href="/tags/" title="Archive posts order by tag">Tags</a></li><li><a href="/about/">About me</a></li></ul></header><div class=shadow><div class=content><div class="post single"><h1>CentOS 6.9 配置静态IP与超级用户</h1><info datetime=2018-01-09>Jan 09, 2018</info><div class=body><h1>目标</h1><p>在这个教程我们将学习 CentOS 6.9 minimal 安装好后：</p><ul><li><p>如何配置静态IP</p></li><li><p>如何新建超级用户</p></li><li><p>如何禁止root用户远程登录</p></li></ul><h1>配置固定IP</h1><div class=highlight><pre><code class="text language-text" data-lang=text># vi /etc/sysconfig/network-scripts/ifcfg-eth0
+# i
+
+DEVICE=eth0
+HWADDR=00:8C:FA:15:26:34
+TYPE=Ethernet
+UUID=50c10654-f869-4916-8973-475001ade995
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=static
+IPADDR=10.200.61.9
+NETMASK=255.255.192.0
+GATEWAY=10.200.1.2
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+
+# Esc
+# :wq
+
+# service network restart
+</code></pre></div><h1>新建超级用户</h1><div class=highlight><pre><code class="text language-text" data-lang=text># adduser newsu
+# passwd newsu
+# visudo
+
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+newsu   ALL=(ALL)       ALL
+</code></pre></div><h1>禁止root用户远程登录</h1><div class=highlight><pre><code class="text language-text" data-lang=text># vi /etc/ssh/sshd_config
+
+PermitRootLogin no
+
+# service sshd restart
+</code></pre></div><p><strong>Enjoy it!</strong></p></div><div class=ribbon><div class=rectangle><a href="/2017/11/07/setup-opencv-python-dev-env-in-windows/" title="在 Windows 上安装 OpenCV-Python 开发环境"><div class=prev><i class="fa fa-angle-left"></i></div></a><div class=curr><div class=link><i class="fa fa-link"></i> <a href="http://huntout.me/2018/01/09/setup-centos-network-and-superuser/">http://huntout.me/2018/01/09/setup-centos-network-and-superuser/</a></div><ul class=tags-box><li><i class="fa fa-tags"></i></li><li><a href=/tags/#centos>centos</a></li></ul></div></div></div><div id=disqus_thread></div><script>var disqus_config = function() {
+        this.page.url = 'http://huntout.me/2018/01/09/setup-centos-network-and-superuser/';
+        this.page.identifier = '/2018/01/09/setup-centos-network-and-superuser';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+        s.src = 'https://huntout.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></div><footer><p><a rel=license href=http://creativecommons.org/licenses/by/4.0 class=cc target=_blank><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-cc.e30e.png class=cc> <img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-by.abfe.png class=cc></a> This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by/4.0 target=_blank>Creative Commons License</a></p><p>Powered by <a href=http://jekyllrb.com target=_blank>Jekyll</a> &middot; Hosted by <a href=https://github.com/huntout/huntout.github.io target=_blank>GitHub</a></p></footer></div><script src="http://tajs.qq.com/stats?sId=31233320" charset=UTF-8></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47439417-1', 'huntout.me');
+  ga('send', 'pageview');</script></body></html>

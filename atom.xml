@@ -3,12 +3,73 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2017-11-07T00:00:00+08:00</updated>
+  <updated>2018-01-09T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>CentOS 6.9 配置静态IP与超级用户</title>
+    <link href="http://huntout.me/2018/01/09/setup-centos-network-and-superuser/"/>
+    <updated>2018-01-09T00:00:00+08:00</updated>
+    <id>http://huntout.me/2018/01/09/setup-centos-network-and-superuser</id>
+    <content type="html">&lt;h1&gt;目标&lt;/h1&gt;
+
+&lt;p&gt;在这个教程我们将学习 CentOS 6.9 minimal 安装好后：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如何配置静态IP&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如何新建超级用户&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如何禁止root用户远程登录&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;配置固定IP&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# vi /etc/sysconfig/network-scripts/ifcfg-eth0
+# i
+
+DEVICE=eth0
+HWADDR=00:8C:FA:15:26:34
+TYPE=Ethernet
+UUID=50c10654-f869-4916-8973-475001ade995
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=static
+IPADDR=10.200.61.9
+NETMASK=255.255.192.0
+GATEWAY=10.200.1.2
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+
+# Esc
+# :wq
+
+# service network restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;新建超级用户&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# adduser newsu
+# passwd newsu
+# visudo
+
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+newsu   ALL=(ALL)       ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;禁止root用户远程登录&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# vi /etc/ssh/sshd_config
+
+PermitRootLogin no
+
+# service sshd restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>在 Windows 上安装 OpenCV-Python 开发环境</title>
@@ -659,58 +720,6 @@ MSMINCHO.TTC,MS PMincho
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Install gitosis on Ubuntu</title>
-    <link href="http://huntout.me/2014/02/13/gitosis/"/>
-    <updated>2014-02-13T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/02/13/gitosis</id>
-    <content type="html">&lt;p&gt;How to install gitosis on Ubuntu?&lt;/p&gt;
-
-&lt;h2&gt;Install dependencies&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;apt-get update
-apt-get uggrade
-apt-get install openssh-server git-core python-setuptools
-ps -e &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep ssh
-dpkg --get-selections &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep -e &lt;span class=&quot;s1&quot;&gt;&amp;#39;openssh-server\|git-core\|python-setuptools&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Install gitosis&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /tmp
-git clone https://github.com/tv42/gitosis.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;gitosis
-python setup.py install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Copy your ssh public key to server&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# localhost&lt;/span&gt;
-scp ~/.ssh/your_id_rsa.pub root@YOUR_SERVER:/tmp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Add a git user, then init gitosis with it&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo adduser &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --system &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --shell /bin/sh &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --gecos &lt;span class=&quot;s1&quot;&gt;&amp;#39;gitosis user&amp;#39;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --group &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --disabled-password &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --home /home/git &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  git
-sudo -H -u git gitosis-init &amp;lt; /tmp/your_id_rsa.pub
-sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For now, gitosis uses the HOME environment variable to locate where to write its files. If you use sudo -u without -H, sudo will leave the old value of HOME in place, and this will cause trouble. There will be a workaround for that later on, but for now, always remember to use -H if you&amp;#39;re sudoing to the account. (&lt;a href=&quot;https://github.com/tv42/gitosis#setting-up&quot;&gt;gitosis&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;Config gitosis on localhost&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# localhost&lt;/span&gt;
-git clone git@YOUR_SERVER:gitosis-admin.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;For more config detail, please reference &lt;a href=&quot;http://git-scm.com/book/en/Git-on-the-Server-Gitosis&quot;&gt;the Git Book&lt;/a&gt;（&lt;a href=&quot;http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitosis&quot;&gt;中文&lt;/a&gt;）.&lt;/p&gt;
 </content>
     <author>
       <name>Huntout Zhang</name>

@@ -79,6 +79,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://huntout.me/2018/01/09/setup-centos-network-and-superuser/</loc>
+        <lastmod>2018-01-09T17:11:08+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://huntout.me/about/</loc>
         <lastmod>2016-01-12T16:35:45+08:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -92,7 +98,7 @@
     </url>
     <url>
         <loc>http://huntout.me/</loc>
-        <lastmod>2017-11-22T16:35:32+08:00</lastmod>
+        <lastmod>2018-01-09T17:11:08+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
