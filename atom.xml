@@ -3,12 +3,74 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2018-01-09T00:00:00+08:00</updated>
+  <updated>2018-01-16T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>CentOS 6.9 移除 home lv 并扩展 root lv</title>
+    <link href="http://huntout.me/2018/01/16/extend-centos-root-logic-volume/"/>
+    <updated>2018-01-16T00:00:00+08:00</updated>
+    <id>http://huntout.me/2018/01/16/extend-centos-root-logic-volume</id>
+    <content type="html">&lt;h1&gt;问题&lt;/h1&gt;
+
+&lt;p&gt;CentOS 6.9 minimal 按默认安装好后：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# df -h
+
+    Filesystem                    Size  Used Avail Use% Mounted on
+    /dev/mapper/VolGroup-lv_root   50G  687M   46G   2% /
+    tmpfs                          32G     0   32G   0% /dev/shm
+    /dev/md126p2                  477M   27M  425M   6% /boot
+    /dev/md126p1                  200M  264K  200M   1% /boot/efi
+    /dev/mapper/VolGroup-lv_home  790G   69M  750G   1% /home
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;空余空间都在 home lv 上，如何把空间扩展到 root lv 上？&lt;/p&gt;
+
+&lt;h1&gt;移除 home lv&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# umount /home
+# lvchange -an /dev/VolGroup/lv_home
+# lvremove /dev/VolGroup/lv_home
+# vi /etc/fstab
+
+    /dev/mapper/VolGroup-lv_home /home               ext4    defaults        1 2
+    # dd 这一行
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;扩展 root lv&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# lvextend -l +100%FREE /dev/VolGroup/lv_root
+    Size of logical volume VolGroup/lv_root changed from 50.00 GiB (12800 extents)
+    to 852.69 GiB (218289 extents).
+    Logical volume lv_root successfully resized.
+
+# lvdisplay
+
+# resize2fs -p /dev/VolGroup/lv_root
+    resize2fs 1.41.12 (17-May-2010)
+    Filesystem at /dev/VolGroup/lv_root is mounted on /; on-line resizing required
+    old desc_blocks = 4, new_desc_blocks = 54
+    Performing an on-line resize of /dev/VolGroup/lv_root to 223527936 (4k) blocks.
+    The filesystem on /dev/VolGroup/lv_root is now 223527936 blocks long.
+
+# df -h
+    Filesystem                      Size  Used Avail Use% Mounted on
+    /dev/mapper/VolGroup-lv_root    840G  707M  796G   1% /
+    tmpfs                            32G     0   32G   0% /dev/shm
+    /dev/md126p2                    477M   27M  425M   6% /boot
+    /dev/md126p1                    200M  264K  200M   1% /boot/efi
+
+# reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;根据磁盘大小命令 resize2fs 可能会需要很长时间，800G大概需要20分钟，请有耐心一些。&lt;/p&gt;
+
+&lt;p&gt;如果有别的办法可以快一些，敬请留言，谢谢！&lt;/p&gt;
+</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>CentOS 6.9 配置静态IP与超级用户</title>
@@ -659,64 +721,6 @@ DISKPART&amp;gt; create partition primary
 &lt;li&gt;&lt;p&gt;如果找到任何更新，请单击“安装更新”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在安装完更新之后，重新启动计算机。单击“开始”按钮，在搜索框中键入 msconfig，然后单击 “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“正常启动”，再单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Beauty Code Font on Windows</title>
-    <link href="http://huntout.me/2014/03/24/beauty-code-font/"/>
-    <updated>2014-03-24T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/03/24/beauty-code-font</id>
-    <content type="html">&lt;p&gt;在 Windows 上如何呈现漂亮的编程字体显示效果？一是使用合适的渲染软件，二是正确设置字体。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/4.1211.png&quot; alt=&quot;Sublime Text 效果&quot;&gt;&lt;/p&gt;
-
-&lt;h1&gt;MacType&lt;/h1&gt;
-
-&lt;p&gt;一款模仿 Mac 的字体渲染风格的软件，先看看效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/1.d3be.png&quot; alt=&quot;MacType效果对比图&quot;&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载安装 &lt;a href=&quot;&quot;&gt;https://code.google.com/p/mactype/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;配置使用服务模式，最为方便&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/2.613c.png&quot; alt=&quot;服务模式&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;服务已启动&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/03/24/beauty-code-font/3.3dfd.png&quot; alt=&quot;服务已启动&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1&gt;Monaco Font&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载安装字体 &lt;a href=&quot;&quot;&gt;https://github.com/todylu/monaco.ttf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;注册表 &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;新建一个多字符串值 &lt;code&gt;Monaco&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;CONSOLA.TTF,Consolas
-SIMSUN.TTC,SimSun
-MINGLIU.TTC,PMingLiU
-MSMINCHO.TTC,MS PMincho
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;重新注销登录后生效。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1&gt;Sublime Text&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Preferences/Settings - User&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;quot;font_face&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Monaco&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
