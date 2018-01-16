@@ -3,8 +3,7 @@ layout: post
 comments: yes
 tags: [opencv, python]
 title: "在 Windows 上安装 OpenCV-Python 开发环境"
-photo_url: "opencv.png"
-photo_title: "Setup OpenCV-Python in Windows"
+description: "如何在 Windows 上安装 OpenCV-Python，以及在 Visual Code 上安装配置 Python 插件"
 ---
 
 目标
