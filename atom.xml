@@ -3,12 +3,121 @@
   <title>huntout.me</title>
   <link href="http://huntout.me/atom.xml" rel="self"/>
   <link href="http://huntout.me"/>
-  <updated>2018-01-16T00:00:00+08:00</updated>
+  <updated>2018-03-21T00:00:00+08:00</updated>
   <id>http://huntout.me</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Ruby Version Manager (RVM)</title>
+    <link href="http://huntout.me/2018/03/21/rvm/"/>
+    <updated>2018-03-21T00:00:00+08:00</updated>
+    <id>http://huntout.me/2018/03/21/rvm</id>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://rvm.io&quot; title=&quot;Ruby Version Manager&quot;&gt;RVM&lt;/a&gt; is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install gpg2
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;## the backslash &amp;#39;\&amp;#39; bypasses a possible alias curl&lt;/span&gt;
+&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Setting&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$PATH:$HOME/.rvm/bin&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.rvm/scripts/rvm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install gcc@4.9
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ruby_url=https://cache.ruby-china.org/pub/ruby&amp;quot;&lt;/span&gt; &amp;gt; ~/.rvm/user/db
+rvm list known
+rvm install 1.9.3 --with-gcc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang
+rvm use 1.9.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>iTerm2 & oh-my-zsh</title>
+    <link href="http://huntout.me/2018/03/21/iterm2-oh-my-zsh/"/>
+    <updated>2018-03-21T00:00:00+08:00</updated>
+    <id>http://huntout.me/2018/03/21/iterm2-oh-my-zsh</id>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iTerm2 is terminal emulator for macOS that amazing things.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://iterm2.com/img/logo2x.jpg&quot; alt=&quot;iTerm2&quot;&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/5c385f15f3eaedb72cfcfbbaf75355b700ac0757/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6f686d797a73682f6f682d6d792d7a73682d6c6f676f2e706e67&quot; alt=&quot;Oh My Zsh&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Download and install&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://iterm2.com/downloads.html&quot;&gt;iTerm2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Patch custom font for the special characters&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone https://github.com/powerline/fontpatcher.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;fontpatcher
+./setup.py build
+sudo ./setup.py install
+brew install fontforge
+fontforge scripts/powerline-fontpatcher /System/Library/Fonts/Monaco.dfont
+cp &lt;span class=&quot;s2&quot;&gt;&amp;quot;Monaco for Powerline.otf&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$HOME/Library/Fonts/&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;iTerm2 Preferences&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Profiles -&amp;gt; Colors -&amp;gt; Color Presets -&amp;gt; Solarized Dark
+         -&amp;gt; Text -&amp;gt; Text Rendering -&amp;gt; Uncheck &amp;quot;Draw bold text in bright colors&amp;quot;
+         -&amp;gt; Text -&amp;gt; Font -&amp;gt; 14pt Monaco for Powerline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;iTerm2 HotKeys&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;⌃ + u&lt;/code&gt;：清空当前行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + a&lt;/code&gt;：移动到行首&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + e&lt;/code&gt;：移动到行尾&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + f&lt;/code&gt;：向前移动&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + b&lt;/code&gt;：向后移动&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + p&lt;/code&gt;：上一条命令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + n&lt;/code&gt;：下一条命令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + r&lt;/code&gt;：搜索历史命令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + y&lt;/code&gt;：召回最近用命令删除的文字&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + h&lt;/code&gt;：删除光标之前的字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + d&lt;/code&gt;：删除光标所指的字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + w&lt;/code&gt;：删除光标之前的单词&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + k&lt;/code&gt;：删除从光标到行尾的内容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌃ + t&lt;/code&gt;：交换光标和之前的字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;oh-my-zsh theme&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/Themes#agnoster&quot;&gt;agnoster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;## ~/.zshrc&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;agnoster&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;DEFAULT_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;huntout
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;oh-my-zsh plugins&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install autojump
+brew install zsh-syntax-highlighting
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    <author>
+      <name>Huntout Zhang</name>
+      <uri>http://huntout.me/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>CentOS 6.9 移除 home lv 并扩展 root lv</title>
@@ -608,121 +717,6 @@ DISKPART&amp;gt; create partition primary
   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Extending Android Build Files In Cordova</title>
-    <link href="http://huntout.me/2016/01/14/extending-android-build-files-in-cordova/"/>
-    <updated>2016-01-14T00:00:00+08:00</updated>
-    <id>http://huntout.me/2016/01/14/extending-android-build-files-in-cordova</id>
-    <content type="html">&lt;p&gt;最近流行 &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mobile apps with HTML, CSS &amp;amp; JS&lt;/li&gt;
-&lt;li&gt;Target multiple platforms with one code base&lt;/li&gt;
-&lt;li&gt;Free and open source&lt;/li&gt;
-&lt;li&gt;Support platforms: android, iOS, amazon-fireos, blackberry10, browser, firefoxos, webos, windows, windows8, wp8&lt;/li&gt;
-&lt;li&gt;Reusable code across platforms&lt;/li&gt;
-&lt;li&gt;Support for offline scenarios&lt;/li&gt;
-&lt;li&gt;Access native device APIs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;在新的 Android 项目试用了一下，感觉不错。结合 &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack&lt;/a&gt; 及 &lt;a href=&quot;http://vuejs.org/&quot;&gt;Vuejs&lt;/a&gt; 形成了一个可以在 browser 端调试，最后打包成 APK，并且支持单元测试及 E2E 测试的前端脚手架，有时间我会把这个脚手架开源。&lt;/p&gt;
-
-&lt;h3&gt;问题&lt;/h3&gt;
-
-&lt;p&gt;项目中使用了 &lt;code&gt;phonegap-plugin-barcodescanner&lt;/code&gt;，该插件带了十几种本地语言包，&lt;code&gt;cordova build --release&lt;/code&gt; 时会报告 &lt;code&gt;MissingTranslation&lt;/code&gt; 错误。&lt;/p&gt;
-
-&lt;p&gt;最直接的解决方法是在 &lt;code&gt;platforms/android/build.gradle&lt;/code&gt; 中增加&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;android {
-  lintOptions {
-      disable &amp;#39;MissingTranslation&amp;#39;
-      disable &amp;#39;ExtraTranslation&amp;#39;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;问题是 &lt;code&gt;build.gradle&lt;/code&gt; 会在 build 过程中被覆盖，同时 &lt;code&gt;platforms&lt;/code&gt; 目录是被 git ignore 的。&lt;/p&gt;
-
-&lt;h3&gt;解决方案&lt;/h3&gt;
-
-&lt;p&gt;Cordova 提供了 hooks 功能，可以很好的解决这个问题：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;hooks/before_build/beforeBuild.js&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/usr/bin/env node&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;fs-extra&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;platforms_extras&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projectRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;platforms&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;copySync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Copy platforms extra files.&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;platforms_extras/android/build-extras.gradle&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;android {
-  lintOptions {
-      disable &amp;#39;MissingTranslation&amp;#39;
-      disable &amp;#39;ExtraTranslation&amp;#39;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Windows Update 错误 80070020</title>
-    <link href="http://huntout.me/2014/06/26/windows-update-error-80070020/"/>
-    <updated>2014-06-26T00:00:00+08:00</updated>
-    <id>http://huntout.me/2014/06/26/windows-update-error-80070020</id>
-    <content type="html">&lt;p&gt;近期 Windows 自动更新时遇到 80070020 错误。&lt;/p&gt;
-
-&lt;p&gt;查询&lt;a href=&quot;http://windows.microsoft.com/zh-cn/windows/windows-update-error-80070020#1TC=windows-7&quot;&gt;微软帮助&lt;/a&gt;：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;如果收到 Windows Update 错误 80070020，原因可能是计算机上运行的程序干扰了 Windows Update。此问题通常可通过重新启动电脑并再次运行 Windows Update 解决。&lt;/p&gt;
-
-&lt;p&gt;如果你在重新启动电脑并运行 Windows Update 之后仍收到错误 80070020，则说明该干扰程序（例如防病毒程序）可能在你第一次启动电脑时就自动运行了。在此情况下，你需要重新启动计算机并且不要运行那些在 Windows 第一次启动时就运行的程序。可通过以下两种方法完成此操作：一种是以安全模式启动计算机，另一种是手动启动 Windows 而不启动程序（也称为干净重新启动）。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;OK，马上进入安全模式，然后通过单击「开始」按钮，打开 “Windows Update”（在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”）。&lt;/p&gt;
-
-&lt;p&gt;What？系统提示安全模式下无法启动 Windows Update。&lt;/p&gt;
-
-&lt;p&gt;那就启用 B 计划，“干净重新启动”：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;单击“开始”按钮，在搜索框中键入 msconfig，然后单击‌ “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“选择性启动”，然后清除“加载启动项”复选框。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/1.f8a8.png&quot; alt=&quot;禁用所有启动项&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;依次单击“服务”、“隐藏所有 Microsoft 服务”，然后单击“全部禁用”。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7d9ouh.com1.z0.glb.clouddn.com/2014/06/26/windows-update-error-80070020/2.6191.png&quot; alt=&quot;禁用全部非 Microsoft 服务&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过单击「开始」按钮，打开 “Windows Update”。 在搜索框中，键入更新，然后在结果列表中单击 “Windows Update”。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在左窗格中，单击“检查更新”，然后等待 Windows 查找计算机的最新更新。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果找到任何更新，请单击“安装更新”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在安装完更新之后，重新启动计算机。单击“开始”按钮，在搜索框中键入 msconfig，然后单击 “msconfig.exe”。如果系统提示您输入管理员密码或进行确认，请键入该密码或提供确认。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在“常规”选项卡上，单击“正常启动”，再单击“确定”，然后单击“重新启动”。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
 &lt;p&gt;&lt;strong&gt;Enjoy it!&lt;/strong&gt;&lt;/p&gt;
 </content>
     <author>

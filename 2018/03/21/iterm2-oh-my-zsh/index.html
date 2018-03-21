@@ -1,0 +1,34 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>iTerm2 & oh-my-zsh &mdash; huntout.me</title><meta name=viewport content="width=device-width, initial-scale=1"><meta property=og:title content="iTerm2 & oh-my-zsh"><meta name=description content="iTerm2 is terminal emulator for macOS that amazing things."><meta name=og:description content="iTerm2 is terminal emulator for macOS that amazing things."><meta name=twitter:card content=summary><meta name=twitter:site content=@huntout><meta property=og:url content="http://huntout.me/2018/03/21/iterm2-oh-my-zsh/"><meta property=og:site_name content=huntout.me><meta property=og:type content=article><meta property=og:locale content=zh_CN><meta property=article:published_time content=2018-03-21><!-- Place favicon.ico and apple-touch-icon(s) in the root directory --><!-- rss --><link rel=alternate type=application/atom+xml title=huntout.me href=http://feeds.feedburner.com/huntout><link rel=stylesheet href=http://7d9ouh.com1.z0.glb.clouddn.com/css/main.826b.css><script src=http://7d9ouh.com1.z0.glb.clouddn.com/js/head-scripts.d494.js></script></head><body><!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><div class=body-wrapper><header><h1 class=logo onclick="document.location.href='/'"><a href="/"><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/logo.a4f1.png alt=huntout.me></a></h1><ul class=navigation><li><a href="/archive/" title="Archive posts">Archive</a></li><li><a href="/tags/" title="Archive posts order by tag">Tags</a></li><li><a href="/about/">About me</a></li></ul></header><div class=shadow><div class=content><div class="post single"><h1>iTerm2 & oh-my-zsh</h1><info datetime=2018-03-21>Mar 21, 2018</info><div class=body><blockquote><p>iTerm2 is terminal emulator for macOS that amazing things.</p></blockquote><p><img src=http://iterm2.com/img/logo2x.jpg alt=iTerm2></p><blockquote><p>Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.</p></blockquote><p><img src=https://camo.githubusercontent.com/5c385f15f3eaedb72cfcfbbaf75355b700ac0757/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6f686d797a73682f6f682d6d792d7a73682d6c6f676f2e706e67 alt="Oh My Zsh"></p><h2>Download and install</h2><ul><li><a href=http://iterm2.com/downloads.html>iTerm2</a></li><li><a href=https://github.com/robbyrussell/oh-my-zsh>oh-my-zsh</a></li></ul><h2>Patch custom font for the special characters</h2><div class=highlight><pre><code class="bash language-bash" data-lang=bash>git clone https://github.com/powerline/fontpatcher.git
+<span class=nb>cd </span>fontpatcher
+./setup.py build
+sudo ./setup.py install
+brew install fontforge
+fontforge scripts/powerline-fontpatcher /System/Library/Fonts/Monaco.dfont
+cp <span class=s2>&quot;Monaco for Powerline.otf&quot;</span> <span class=s2>&quot;$HOME/Library/Fonts/&quot;</span>
+</code></pre></div><h2>iTerm2 Preferences</h2><div class=highlight><pre><code class="text language-text" data-lang=text>Profiles -&gt; Colors -&gt; Color Presets -&gt; Solarized Dark
+         -&gt; Text -&gt; Text Rendering -&gt; Uncheck &quot;Draw bold text in bright colors&quot;
+         -&gt; Text -&gt; Font -&gt; 14pt Monaco for Powerline
+</code></pre></div><h2>iTerm2 HotKeys</h2><ul><li><code>⌃ + u</code>：清空当前行</li><li><code>⌃ + a</code>：移动到行首</li><li><code>⌃ + e</code>：移动到行尾</li><li><code>⌃ + f</code>：向前移动</li><li><code>⌃ + b</code>：向后移动</li><li><code>⌃ + p</code>：上一条命令</li><li><code>⌃ + n</code>：下一条命令</li><li><code>⌃ + r</code>：搜索历史命令</li><li><code>⌃ + y</code>：召回最近用命令删除的文字</li><li><code>⌃ + h</code>：删除光标之前的字符</li><li><code>⌃ + d</code>：删除光标所指的字符</li><li><code>⌃ + w</code>：删除光标之前的单词</li><li><code>⌃ + k</code>：删除从光标到行尾的内容</li><li><code>⌃ + t</code>：交换光标和之前的字符</li></ul><h2>oh-my-zsh theme</h2><ul><li><a href=https://github.com/robbyrussell/oh-my-zsh/wiki/Themes#agnoster>agnoster</a></li></ul><div class=highlight><pre><code class="bash language-bash" data-lang=bash><span class=c>## ~/.zshrc</span>
+<span class=nv>ZSH_THEME</span><span class=o>=</span><span class=s2>&quot;agnoster&quot;</span>
+<span class=nv>DEFAULT_USER</span><span class=o>=</span><span class=err>&quot;</span>huntout
+</code></pre></div><h2>oh-my-zsh plugins</h2><div class=highlight><pre><code class="bash language-bash" data-lang=bash>brew install autojump
+brew install zsh-syntax-highlighting
+</code></pre></div></div><div class=ribbon><div class=rectangle><a href="/2018/01/16/extend-centos-root-logic-volume/" title="CentOS 6.9 移除 home lv 并扩展 root lv"><div class=prev><i class="fa fa-angle-left"></i></div></a> <a href="/2018/03/21/rvm/" title="Ruby Version Manager (RVM)"><div class=next><i class="fa fa-angle-right"></i></div></a><div class=curr><div class=link><i class="fa fa-link"></i> <a href="http://huntout.me/2018/03/21/iterm2-oh-my-zsh/">http://huntout.me/2018/03/21/iterm2-oh-my-zsh/</a></div><ul class=tags-box><li><i class="fa fa-tags"></i></li><li><a href=/tags/#terminal>terminal</a></li></ul></div></div></div><div id=disqus_thread></div><script>var disqus_config = function() {
+        this.page.url = 'http://huntout.me/2018/03/21/iterm2-oh-my-zsh/';
+        this.page.identifier = '/2018/03/21/iterm2-oh-my-zsh';
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+        s.src = 'https://huntout.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></div><footer><p><a rel=license href=http://creativecommons.org/licenses/by/4.0 class=cc target=_blank><img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-cc.e30e.png class=cc> <img src=http://7d9ouh.com1.z0.glb.clouddn.com/img/cc-by.abfe.png class=cc></a> This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by/4.0 target=_blank>Creative Commons License</a></p><p>Powered by <a href=http://jekyllrb.com target=_blank>Jekyll</a> &middot; Hosted by <a href=https://github.com/huntout/huntout.github.io target=_blank>GitHub</a></p></footer></div><script src="http://tajs.qq.com/stats?sId=31233320" charset=UTF-8></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47439417-1', 'huntout.me');
+  ga('send', 'pageview');</script></body></html>
