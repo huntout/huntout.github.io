@@ -1,5 +1,5 @@
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     blankslate (2.1.2.4)
     chunky_png (1.3.0)
@@ -13,6 +13,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     fast-stemmer (1.0.2)
+    ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     fssm (0.2.10)
     highline (1.6.20)
@@ -49,12 +50,17 @@ GEM
     sass (3.2.14)
     toml (0.1.0)
       parslet (~> 1.5.0)
+    yajl-ruby (1.1.0)
     yajl-ruby (1.1.0-x86-mingw32)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
   compass (>= 0.12)
   jekyll (~> 1.4.0)
   redcarpet
+
+BUNDLED WITH
+   1.16.1

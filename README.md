@@ -2,6 +2,19 @@
 
 > Blog of huntout.me
 
+## Prerequisites
+
+### use `nvm` to install `node 6.13`
+
+    npm i -g bower grunt-cli
+    npm i
+    bower install
+
+### use `rvm` to install `ruby 1.9`
+
+    gem install bundle
+    bundle install
+
 ## Branches
 
 * branch `yo` is the major work branch
