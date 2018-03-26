@@ -60,7 +60,7 @@ cp "Monaco for Powerline.otf" "$HOME/Library/Fonts/"
 ```bash
 ## ~/.zshrc
 ZSH_THEME="agnoster"
-DEFAULT_USER="huntout
+DEFAULT_USER="huntout"
 ```
 
 ## oh-my-zsh plugins
