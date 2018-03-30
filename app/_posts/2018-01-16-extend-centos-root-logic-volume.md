@@ -4,8 +4,6 @@ comments: yes
 tags: [centos]
 title: "CentOS 6.9 移除 home lv 并扩展 root lv"
 description: "CentOS 6.9 默认安装好后，空余空间都在 home lv 上，如何把空间扩展到 root lv 上？"
-photo_url: "centos.png"
-photo_title: "Extend root LV"
 ---
 
 问题

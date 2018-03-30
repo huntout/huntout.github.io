@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: yes
-tags: terminal
+tags: [macOS, terminal]
 title: "iTerm2 & oh-my-zsh"
 ---
 
