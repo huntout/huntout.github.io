@@ -4,12 +4,12 @@
 # See readme file for documenation
 #
 # Updated to use config file for settings by Daniel Groves
-# Site: http://danielgroves.net
+# Site: https://danielgroves.net
 #
 # Author: Michael Levin
-# Site: http://www.kinnetica.com
+# Site: https://www.kinnetica.com
 # Distributed Under A Creative Commons License
-#   - http://creativecommons.org/licenses/by/3.0/
+#   - https://creativecommons.org/licenses/by/3.0/
 
 require 'rexml/document'
 
@@ -97,7 +97,7 @@ module Jekyll
 
       urlset = REXML::Element.new "urlset"
       urlset.add_attribute("xmlns",
-        "http://www.sitemaps.org/schemas/sitemap/0.9")
+        "https://www.sitemaps.org/schemas/sitemap/0.9")
 
       @last_modified_post_date = fill_posts(site, urlset)
       fill_pages(site, urlset)
