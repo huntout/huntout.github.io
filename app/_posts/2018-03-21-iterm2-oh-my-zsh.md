@@ -2,7 +2,7 @@
 layout: post
 comments: yes
 tags: [macOS, terminal]
-title: "iTerm2 & oh-my-zsh"
+title: "iTerm2 and oh-my-zsh"
 ---
 
 > iTerm2 is terminal emulator for macOS that amazing things.
