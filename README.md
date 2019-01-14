@@ -1,6 +1,6 @@
 # huntout.github.io
 
-> Blog of huntout.me
+> Blog of Huntout
 
 ## Prerequisites
 

@@ -1,8 +1,8 @@
 {
-  "name": "huntout.me",
+  "name": "huntout.github.io",
   "private": true,
   "version": "0.1.0",
-  "description": "Blog site of Huntout",
+  "description": "Blog of Huntout",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",

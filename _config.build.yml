@@ -7,4 +7,4 @@ future: false
 show_drafts: false
 debug: false
 
-cdnurl: http://huntout.me
+cdnurl: https://huntout.github.io
