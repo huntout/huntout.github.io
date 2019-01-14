@@ -3,7 +3,7 @@
 
 # (!) Using `.htaccess` files slows down Apache, therefore, if you have access
 # to the main server config file (usually called `httpd.conf`), you should add
-# this logic there: http://httpd.apache.org/docs/current/howto/htaccess.html.
+# this logic there: https://httpd.apache.org/docs/current/howto/htaccess.html.
 
 # ##############################################################################
 # # CROSS-ORIGIN RESOURCE SHARING (CORS)                                       #
@@ -14,8 +14,8 @@
 # ------------------------------------------------------------------------------
 
 # Enable cross-origin AJAX requests.
-# http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
-# http://enable-cors.org/
+# https://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+# https://enable-cors.org/
 
 # <IfModule mod_headers.c>
 #    Header set Access-Control-Allow-Origin "*"
@@ -27,8 +27,8 @@
 
 # Send the CORS header for images when browsers request it.
 # https://developer.mozilla.org/en/CORS_Enabled_Image
-# http://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
-# http://hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
+# https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+# https://hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
 
 <IfModule mod_setenvif.c>
     <IfModule mod_headers.c>
@@ -62,8 +62,8 @@
 
 # Prevent Apache from returning a 404 error for a rewrite if a directory
 # with the same name does not exist.
-# http://httpd.apache.org/docs/current/content-negotiation.html#multiviews
-# http://www.webmasterworld.com/apache/3808792.htm
+# https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
+# https://www.webmasterworld.com/apache/3808792.htm
 
 Options -MultiViews
 
@@ -72,7 +72,7 @@ Options -MultiViews
 # ------------------------------------------------------------------------------
 
 # You can customize what Apache returns to the client in case of an error (see
-# http://httpd.apache.org/docs/current/mod/core.html#errordocument), e.g.:
+# https://httpd.apache.org/docs/current/mod/core.html#errordocument), e.g.:
 
 ErrorDocument 404 /404.html
 
@@ -86,7 +86,7 @@ ErrorDocument 404 /404.html
 # ------------------------------------------------------------------------------
 
 # Force IE to render pages in the highest available mode in the various
-# cases when it may not: http://hsivonen.iki.fi/doctype/ie-mode.pdf.
+# cases when it may not: https://hsivonen.iki.fi/doctype/ie-mode.pdf.
 
 <IfModule mod_headers.c>
     Header set X-UA-Compatible "IE=edge"
@@ -102,8 +102,8 @@ ErrorDocument 404 /404.html
 # ------------------------------------------------------------------------------
 
 # Allow cookies to be set from iframes in IE.
-# http://msdn.microsoft.com/en-us/library/ms537343.aspx
-# http://www.w3.org/TR/2000/CR-P3P-20001215/
+# https://msdn.microsoft.com/en-us/library/ms537343.aspx
+# https://www.w3.org/TR/2000/CR-P3P-20001215/
 
 # <IfModule mod_headers.c>
 #   Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
@@ -126,7 +126,7 @@ ErrorDocument 404 /404.html
 
   # JavaScript
     # Normalize to standard type (it's sniffed in IE anyways):
-    # http://tools.ietf.org/html/rfc4329#section-7.2
+    # https://tools.ietf.org/html/rfc4329#section-7.2
     AddType application/javascript                      js
     AddType application/json                            json
 
@@ -193,10 +193,10 @@ AddDefaultCharset utf-8
 
 # If your web host doesn't allow the `FollowSymlinks` option, you may need to
 # comment it out and use `Options +SymLinksIfOwnerMatch` but, be aware of the
-# performance impact: http://httpd.apache.org/docs/current/misc/perf-tuning.html#symlinks
+# performance impact: https://httpd.apache.org/docs/current/misc/perf-tuning.html#symlinks
 
 # Also, some cloud hosting services require `RewriteBase` to be set:
-# http://www.rackspace.com/knowledge_center/frequently-asked-question/why-is-mod-rewrite-not-working-on-my-site
+# https://www.rackspace.com/knowledge_center/frequently-asked-question/why-is-mod-rewrite-not-working-on-my-site
 
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
@@ -215,7 +215,7 @@ AddDefaultCharset utf-8
 # redirect the other one.
 
 # By default option 1 (no "www.") is activated:
-# http://no-www.org/faq.php?q=class_b
+# https://no-www.org/faq.php?q=class_b
 
 # If you'd prefer to use option 2, just comment out all the lines from option 1
 # and uncomment the ones from option 2.
@@ -229,7 +229,7 @@ AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -244,7 +244,7 @@ AddDefaultCharset utf-8
 #    RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
 #    RewriteCond %{HTTP_HOST} !=localhost [NC]
 #    RewriteCond %{HTTP_HOST} !=127.0.0.1
-#    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
 
 
@@ -263,7 +263,7 @@ AddDefaultCharset utf-8
 
 # This might not be the best setting for everyone. You should read about the
 # other two possible values for `X-Frame-Options`: `SAMEORIGIN` and `ALLOW-FROM`
-# http://tools.ietf.org/html/rfc7034#section-2.1.
+# https://tools.ietf.org/html/rfc7034#section-2.1.
 
 # Keep in mind that while you could send the `X-Frame-Options` header for all
 # of your site’s pages, this has the potential downside that it forbids even
@@ -278,8 +278,8 @@ AddDefaultCharset utf-8
 # Sending the `X-Frame-Options` header can also protect your web site against
 # more than just clickjacking attacks: https://cure53.de/xfo-clickjacking.pdf.
 
-# http://tools.ietf.org/html/rfc7034
-# http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx
+# https://tools.ietf.org/html/rfc7034
+# https://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx
 # https://www.owasp.org/index.php/Clickjacking
 
 # <IfModule mod_headers.c>
@@ -302,9 +302,9 @@ AddDefaultCharset utf-8
 # work as-is for your site!
 
 # For more details on how to craft a reasonable policy for your site, read:
-# http://html5rocks.com/en/tutorials/security/content-security-policy (or the
-# specification: http://w3.org/TR/CSP). Also, to make things easier, you can
-# use an online CSP header generator such as: http://cspisawesome.com/.
+# https://html5rocks.com/en/tutorials/security/content-security-policy (or the
+# specification: https://w3.org/TR/CSP). Also, to make things easier, you can
+# use an online CSP header generator such as: https://cspisawesome.com/.
 
 # <IfModule mod_headers.c>
 #    Header set Content-Security-Policy "script-src 'self'; object-src 'self'"
@@ -369,9 +369,9 @@ AddDefaultCharset utf-8
 # especially if the web server is serving user uploaded content, content
 # that could potentially be treated by the browser as executable.
 
-# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
-# http://msdn.microsoft.com/en-us/library/ie/gg622941.aspx
-# http://mimesniff.spec.whatwg.org/
+# https://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
+# https://msdn.microsoft.com/en-us/library/ie/gg622941.aspx
+# https://mimesniff.spec.whatwg.org/
 
 # <IfModule mod_headers.c>
 #     Header set X-Content-Type-Options "nosniff"
@@ -400,14 +400,14 @@ AddDefaultCharset utf-8
 #     browsers to prevent the rendering of the page altogether, instead of
 #     attempting to modify it.
 #
-#     http://hackademix.net/2009/11/21/ies-xss-filter-creates-xss-vulnerabilities
+#     https://hackademix.net/2009/11/21/ies-xss-filter-creates-xss-vulnerabilities
 #
 # IMPORTANT: Do not rely on the XSS filter to prevent XSS attacks! Ensure that
 # you are taking all possible measures to prevent XSS attacks, the most obvious
 # being: validating and sanitizing your site's inputs.
 
-# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-iv-the-xss-filter.aspx
-# http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx
+# https://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-iv-the-xss-filter.aspx
+# https://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx
 # https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
 
 # <IfModule mod_headers.c>
@@ -442,8 +442,8 @@ AddDefaultCharset utf-8
 # tunity (the initial HTTP connection) for an attacker to downgrade or redirect
 # the request. The following header ensures that browser will ONLY connect to
 # your server via HTTPS, regardless of what the users type in the address bar.
-# http://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
-# http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
+# https://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
+# https://www.html5rocks.com/en/tutorials/security/transport-layer-security/
 
 # (!) Remove the `includeSubDomains` optional directive if the subdomains are
 # not using HTTPS.
@@ -475,7 +475,7 @@ AddDefaultCharset utf-8
 <IfModule mod_deflate.c>
 
     # Force compression for mangled headers.
-    # http://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
+    # https://developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping
     <IfModule mod_setenvif.c>
         <IfModule mod_headers.c>
             SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
@@ -514,7 +514,7 @@ AddDefaultCharset utf-8
 # ------------------------------------------------------------------------------
 
 # Prevent some of the mobile network providers from modifying the content of
-# your site: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.5.
+# your site: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.5.
 
 # <IfModule mod_headers.c>
 #    Header set Cache-Control "no-transform"
@@ -525,7 +525,7 @@ AddDefaultCharset utf-8
 # ------------------------------------------------------------------------------
 
 # Since we're sending far-future expires headers (see below), ETags can
-# be removed: http://developer.yahoo.com/performance/rules.html#etags.
+# be removed: https://developer.yahoo.com/performance/rules.html#etags.
 
 # `FileETag None` is not enough for every server.
 <IfModule mod_headers.c>
@@ -602,7 +602,7 @@ FileETag None
 # requests such as `/css/style.12345.css` to `/css/style.css`.
 
 # To understand why this is important and a better idea than `*.css?v231`, read:
-# http://stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
+# https://stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
 
 # <IfModule mod_rewrite.c>
 #    RewriteCond %{REQUEST_FILENAME} !-f
@@ -637,7 +637,7 @@ FileETag None
 # ------------------------------------------------------------------------------
 
 # Allow multiple requests to be sent over the same TCP connection:
-# http://httpd.apache.org/docs/current/en/mod/core.html#keepalive.
+# https://httpd.apache.org/docs/current/en/mod/core.html#keepalive.
 
 # Enable if you serve a lot of static content but, be aware of the
 # possible disadvantages!
