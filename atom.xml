@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>huntout.me</title>
-  <link href="http://huntout.me/atom.xml" rel="self"/>
-  <link href="http://huntout.me"/>
+  <title>huntout.github.io</title>
+  <link href="https://huntout.github.io/atom.xml" rel="self"/>
+  <link href="https://huntout.github.io"/>
   <updated>2018-03-30T00:00:00+08:00</updated>
-  <id>http://huntout.me</id>
+  <id>https://huntout.github.io</id>
   <author>
     <name>Huntout Zhang</name>
     <email>huntout@gmail.com</email>
@@ -12,9 +12,9 @@
   
   <entry>
     <title>brew, brew cask, mas</title>
-    <link href="http://huntout.me/2018/03/30/brew-cask-mas/"/>
+    <link href="https://huntout.github.io/2018/03/30/brew-cask-mas/"/>
     <updated>2018-03-30T00:00:00+08:00</updated>
-    <id>http://huntout.me/2018/03/30/brew-cask-mas</id>
+    <id>https://huntout.github.io/2018/03/30/brew-cask-mas</id>
     <content type="html">&lt;p&gt;在 macOS 上用命令行管理安装软件包以及 apps。 &lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -55,15 +55,15 @@ mas upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>Ruby Version Manager (RVM)</title>
-    <link href="http://huntout.me/2018/03/21/rvm/"/>
+    <link href="https://huntout.github.io/2018/03/21/rvm/"/>
     <updated>2018-03-21T00:00:00+08:00</updated>
-    <id>http://huntout.me/2018/03/21/rvm</id>
+    <id>https://huntout.github.io/2018/03/21/rvm</id>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://rvm.io&quot; title=&quot;Ruby Version Manager&quot;&gt;RVM&lt;/a&gt; is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -88,15 +88,15 @@ rvm use 1.9.3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>iTerm2 & oh-my-zsh</title>
-    <link href="http://huntout.me/2018/03/21/iterm2-oh-my-zsh/"/>
+    <link href="https://huntout.github.io/2018/03/21/iterm2-oh-my-zsh/"/>
     <updated>2018-03-21T00:00:00+08:00</updated>
-    <id>http://huntout.me/2018/03/21/iterm2-oh-my-zsh</id>
+    <id>https://huntout.github.io/2018/03/21/iterm2-oh-my-zsh</id>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;iTerm2 is terminal emulator for macOS that amazing things.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -164,15 +164,15 @@ brew install zsh-syntax-highlighting
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>CentOS 6.9 移除 home lv 并扩展 root lv</title>
-    <link href="http://huntout.me/2018/01/16/extend-centos-root-logic-volume/"/>
+    <link href="https://huntout.github.io/2018/01/16/extend-centos-root-logic-volume/"/>
     <updated>2018-01-16T00:00:00+08:00</updated>
-    <id>http://huntout.me/2018/01/16/extend-centos-root-logic-volume</id>
+    <id>https://huntout.github.io/2018/01/16/extend-centos-root-logic-volume</id>
     <content type="html">&lt;h1&gt;问题&lt;/h1&gt;
 
 &lt;p&gt;CentOS 6.9 minimal 按默认安装好后：&lt;/p&gt;
@@ -226,15 +226,15 @@ brew install zsh-syntax-highlighting
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>CentOS 6.9 配置静态IP与超级用户</title>
-    <link href="http://huntout.me/2018/01/09/setup-centos-network-and-superuser/"/>
+    <link href="https://huntout.github.io/2018/01/09/setup-centos-network-and-superuser/"/>
     <updated>2018-01-09T00:00:00+08:00</updated>
-    <id>http://huntout.me/2018/01/09/setup-centos-network-and-superuser</id>
+    <id>https://huntout.github.io/2018/01/09/setup-centos-network-and-superuser</id>
     <content type="html">&lt;h1&gt;目标&lt;/h1&gt;
 
 &lt;p&gt;在这个教程我们将学习 CentOS 6.9 minimal 安装好后：&lt;/p&gt;
@@ -287,15 +287,15 @@ PermitRootLogin no
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>在 Windows 上安装 OpenCV-Python 开发环境</title>
-    <link href="http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows/"/>
+    <link href="https://huntout.github.io/2017/11/07/setup-opencv-python-dev-env-in-windows/"/>
     <updated>2017-11-07T00:00:00+08:00</updated>
-    <id>http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows</id>
+    <id>https://huntout.github.io/2017/11/07/setup-opencv-python-dev-env-in-windows</id>
     <content type="html">&lt;h1&gt;目标&lt;/h1&gt;
 
 &lt;p&gt;在这个教程我们将学习&lt;/p&gt;
@@ -349,10 +349,10 @@ PermitRootLogin no
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;安装 Python 插件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-python.c75a.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-python.c75a.png&quot; alt=&quot;VSCode Python&quot;&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;根据需要安装 Python 的 pylint 模块&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-pylint.75bd.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2017/11/07/setup-opencv-python-dev-env-in-windows/vscode-pylint.75bd.png&quot; alt=&quot;VSCode Pylint&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;python -m pip install pylint
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -361,15 +361,15 @@ PermitRootLogin no
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>迁移多说到disqus</title>
-    <link href="http://huntout.me/2017/04/01/replace-duoshuo-to-disqus/"/>
+    <link href="https://huntout.github.io/2017/04/01/replace-duoshuo-to-disqus/"/>
     <updated>2017-04-01T00:00:00+08:00</updated>
-    <id>http://huntout.me/2017/04/01/replace-duoshuo-to-disqus</id>
+    <id>https://huntout.github.io/2017/04/01/replace-duoshuo-to-disqus</id>
     <content type="html">&lt;p&gt;多说6月1日就要关闭了，迁移评论系统为 disqus。&lt;/p&gt;
 
 &lt;p&gt;迁移很简单，按照 &lt;a href=&quot;https://disqus.com&quot;&gt;disqus&lt;/a&gt; 的说明将 &lt;code&gt;_includes/comments.html&lt;/code&gt; 里的代码替换就OK了。&lt;/p&gt;
@@ -384,15 +384,15 @@ PermitRootLogin no
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>adb connect android device via WiFi without root</title>
-    <link href="http://huntout.me/2016/05/06/android-adb-connect-without-root/"/>
+    <link href="https://huntout.github.io/2016/05/06/android-adb-connect-without-root/"/>
     <updated>2016-05-06T00:00:00+08:00</updated>
-    <id>http://huntout.me/2016/05/06/android-adb-connect-without-root</id>
+    <id>https://huntout.github.io/2016/05/06/android-adb-connect-without-root</id>
     <content type="html">&lt;p&gt;How to connect your android device via WiFi without root?&lt;/p&gt;
 
 &lt;h4&gt;Steps to get it working:&lt;/h4&gt;
@@ -423,15 +423,15 @@ PermitRootLogin no
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>怎样让 Windows XP 识别 WD My Passport 移动硬盘？</title>
-    <link href="http://huntout.me/2016/05/04/westdata-my-passport-winxp/"/>
+    <link href="https://huntout.github.io/2016/05/04/westdata-my-passport-winxp/"/>
     <updated>2016-05-04T00:00:00+08:00</updated>
-    <id>http://huntout.me/2016/05/04/westdata-my-passport-winxp</id>
+    <id>https://huntout.github.io/2016/05/04/westdata-my-passport-winxp</id>
     <content type="html">&lt;p&gt;有位朋友还在使用 XP 系统，无法识别新买的 &lt;a href=&quot;http://item.jd.com/1639343.html&quot;&gt;WD My Passport 移动硬盘&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;下面是操作方法：&lt;/p&gt;
@@ -468,15 +468,15 @@ DISKPART&amp;gt; create partition primary
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
   <entry>
     <title>My Sublime Text 3 Plugins List</title>
-    <link href="http://huntout.me/2016/01/25/sublime-text-plugins/"/>
+    <link href="https://huntout.github.io/2016/01/25/sublime-text-plugins/"/>
     <updated>2016-01-25T00:00:00+08:00</updated>
-    <id>http://huntout.me/2016/01/25/sublime-text-plugins</id>
+    <id>https://huntout.github.io/2016/01/25/sublime-text-plugins</id>
     <content type="html">&lt;p&gt;&lt;span id=&quot;top&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;My Sublime Text 3 Plugins List:&lt;/p&gt;
@@ -496,13 +496,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Whether your making a img tag in html, setting a background image in css, or linking a .js file to your html (or whatever else people use filename paths for these days…), you can now autocomplete the filename.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2016/01/25/sublime-text-plugins/AutoFileName.8139.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2016/01/25/sublime-text-plugins/AutoFileName.8139.gif&quot; alt=&quot;AutoFileName&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/DocBlockr&quot;&gt;&lt;h2 id=&quot;DocBlockr&quot;&gt;DocBlockr&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Simplifies writing DocBlock comments in Javascript, PHP, CoffeeScript, Actionscript, C &amp;amp; C++&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2016/01/25/sublime-text-plugins/DocBlockr.df89.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2016/01/25/sublime-text-plugins/DocBlockr.df89.gif&quot; alt=&quot;DocBlockr&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/EditorConfig&quot;&gt;&lt;h2 id=&quot;EditorConfig&quot;&gt;EditorConfig&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -523,13 +523,13 @@ DISKPART&amp;gt; create partition primary
 
 &lt;p&gt;Shows diffs between the current file, or selection(s) in the current file, and clipboard, another file, or unsaved changes. Can be configured to show diffs in an external diff tool&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2016/01/25/sublime-text-plugins/FileDiffs.7308.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2016/01/25/sublime-text-plugins/FileDiffs.7308.gif&quot; alt=&quot;FileDiffs&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify&quot;&gt;&lt;h2 id=&quot;HTML-CSS-JS-Prettify&quot;&gt;HTML-CSS-JS Prettify&lt;/h2&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via &lt;a href=&quot;https://github.com/einars/js-beautify&quot;&gt;js-beautify made by Einar Lielmanis&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://huntout.me/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.c0fa.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://huntout.github.io/2016/01/25/sublime-text-plugins/HTML-CSS-JS-Prettify.c0fa.gif&quot; alt=&quot;HTML-CSS-JS Prettify&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json language-json&quot; data-lang=&quot;json&quot;&gt;  &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.jsbeautifyrc&lt;/span&gt;
 
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -704,7 +704,7 @@ DISKPART&amp;gt; create partition primary
 </content>
     <author>
       <name>Huntout Zhang</name>
-      <uri>http://huntout.me/about/</uri>
+      <uri>https://huntout.github.io/about/</uri>
     </author>
   </entry>
   
