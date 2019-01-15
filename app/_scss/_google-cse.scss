@@ -1,16 +1,26 @@
 #___gcse_0 {
   padding-right: 10em;
   input.gsc-input {
-    font-family: $font-serif;
-    font-size: 1.4em;
-    padding: .5em 1em;
-    color: #999;
-    border: 2px solid #ddd;
-    border-radius: 90px;
+    font-family: $font-serif !important;
+    font-size: 1.3em !important;
+    padding: .5em 1em !important;
+    text-indent: 0 !important;
+    height: 1.5em !important;
+    color: #999 !important;
     background: none !important;
   }
-  td.gsc-search-button,
-  td.gsc-clear-button {
+  .gsc-search-button,
+  .gsc-clear-button {
     display: none;
+  }
+  .gsc-input-box {
+    border: 2px solid #ddd;
+    border-radius: 70px;
+  }
+  .gsst_a {
+    padding-top: 10px;
+  }
+  .gsst_b {
+    padding: 0 12px;
   }
 }
